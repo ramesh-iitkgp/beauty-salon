@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="/beauty-salon/demos/glow-glam-mayfair-london/">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxe Glow Salon & Spa — Luxury Hair, Skincare & Beauty</title>
+  <meta name="description" content="Award-winning luxury salon specializing in custom balayage, precision haircutting, hydra-infusion skincare facials, and structured BIAB gel manicures.">
+  
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="header">
+    <div class="container nav-wrap">
+      <a href="#" class="brand-logo">
+        ✨ <span data-business-name>Luxe Glow</span> Salon
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#booking-calculator">Price Calculator</a></li>
+        <li><a href="#transformations">Transformations</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <a href="tel:" data-phone class="btn btn-outline" style="display: none;">📞 Call</a>
+        <a href="#booking-calculator" class="btn btn-primary">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="badge-luxury">✦ Luxury Hair & Aesthetic Lounge</span>
+        <h1>Elevate Your Beauty at <span class="text-gold" data-business-name>Luxe Glow</span></h1>
+        <p data-tagline>Award-Winning Luxury Hair Styling, Skincare Facials & Aesthetic Spa Treatments tailored to enhance your effortless natural radiance.</p>
+        
+        <div class="hero-actions">
+          <a href="#booking-calculator" class="btn btn-primary">✨ Estimate & Book Treatment</a>
+          <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            💬 WhatsApp Salon
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong data-rating>4.9 ★</strong>
+            <span data-reviews-count>210+ Google Reviews</span>
+          </div>
+          <div class="stat-item">
+            <strong>100%</strong>
+            <span>Cruelty-Free Organic Products</span>
+          </div>
+          <div class="stat-item">
+            <strong>1-on-1</strong>
+            <span>VIP Custom Consultation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card-wrap">
+        <div class="hero-img-box">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80" alt="Luxury Salon Interior">
+        </div>
+        <div class="hero-floating-badge">
+          <span style="font-size: 1.8rem;">💎</span>
+          <div>
+            <div style="font-weight: 700; font-size: 0.95rem;">Top Rated in <span data-city>Mayfair</span></div>
+            <div class="rating-stars">★★★★★ <span style="color: var(--color-text-muted); font-size: 0.8rem;">(5.0 Verified)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Treatment Estimator & Booking Calculator -->
+  <section class="booking-section" id="booking-calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-luxury" style="background: rgba(197, 155, 109, 0.2); color: var(--color-primary-light);">✦ Instant Estimate & Booking</span>
+        <h2>Custom Treatment Calculator</h2>
+        <p>Select your desired hair, skin, or spa treatment and customize your add-ons for an immediate estimate.</p>
+      </div>
+
+      <div class="calculator-card">
+        <div class="calc-step-title">
+          <span>1️⃣</span> Select Primary Treatment
+        </div>
+
+        <div class="service-selection-grid">
+          <div class="service-option-card" data-treatment="cut">
+            <h4>Precision Cut & Blowout</h4>
+            <div class="price">From £65 • 60 mins</div>
+          </div>
+          <div class="service-option-card active" data-treatment="balayage">
+            <h4>Artisan Balayage & Gloss</h4>
+            <div class="price">From £160 • 180 mins</div>
+          </div>
+          <div class="service-option-card" data-treatment="facial">
+            <h4>Hydra-Infusion Glow Facial</h4>
+            <div class="price">From £95 • 75 mins</div>
+          </div>
+          <div class="service-option-card" data-treatment="biab">
+            <h4>BIAB Russian Gel Manicure</h4>
+            <div class="price">From £55 • 60 mins</div>
+          </div>
+          <div class="service-option-card" data-treatment="massage">
+            <h4>Aromatherapy Deep Massage</h4>
+            <div class="price">From £85 • 60 mins</div>
+          </div>
+          <div class="service-option-card" data-treatment="bridal">
+            <h4>Couture Bridal Hair & Makeup</h4>
+            <div class="price">From £220 • 150 mins</div>
+          </div>
+        </div>
+
+        <div class="calc-step-title">
+          <span>2️⃣</span> Enhance with Luxury Add-ons (Optional)
+        </div>
+
+        <div class="addons-grid">
+          <label class="addon-checkbox-label">
+            <input type="checkbox" class="addon-checkbox" value="olaplex" checked>
+            <div>
+              <div style="font-size: 0.9rem; font-weight: 600;">Olaplex Bond Repair</div>
+              <div style="font-size: 0.78rem; color: #A39D97;">+£25 • Deep strengthening</div>
+            </div>
+          </label>
+
+          <label class="addon-checkbox-label">
+            <input type="checkbox" class="addon-checkbox" value="collagen_mask">
+            <div>
+              <div style="font-size: 0.9rem; font-weight: 600;">Collagen Eye & Lip Mask</div>
+              <div style="font-size: 0.78rem; color: #A39D97;">+£20 • Instant plumping</div>
+            </div>
+          </label>
+
+          <label class="addon-checkbox-label">
+            <input type="checkbox" class="addon-checkbox" value="nail_art">
+            <div>
+              <div style="font-size: 0.9rem; font-weight: 600;">Hand-Painted Chrome Art</div>
+              <div style="font-size: 0.78rem; color: #A39D97;">+£18 • Bespoke nail design</div>
+            </div>
+          </label>
+
+          <label class="addon-checkbox-label">
+            <input type="checkbox" class="addon-checkbox" value="scalp_scrub">
+            <div>
+              <div style="font-size: 0.9rem; font-weight: 600;">Botanical Scalp Scrub</div>
+              <div style="font-size: 0.78rem; color: #A39D97;">+£22 • Detox & exfoliation</div>
+            </div>
+          </label>
+        </div>
+
+        <!-- Calculated Summary Box -->
+        <div class="calc-summary-box">
+          <div class="total-price-display">
+            <span>Selected Service:</span>
+            <div id="calc-treatment-name" style="font-size: 1.15rem; font-weight: 600; color: #FFFFFF; margin-bottom: 2px;">Artisan Balayage & Color Gloss</div>
+            <div id="calc-duration" style="font-size: 0.82rem; color: #A39D97; margin-bottom: 8px;">Approx. Duration: 180 mins</div>
+            <strong id="calc-total-price">£185</strong>
+          </div>
+
+          <div>
+            <a id="confirm-booking-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 16px 36px; font-size: 1rem;">
+              📅 Reserve Appointment on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before & After Transformations -->
+  <section class="transformations-section" id="transformations">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-luxury">✦ Real Client Results</span>
+        <h2>Signature Transformations</h2>
+        <p>See real before & after transformations created by our master stylists and certified skincare aestheticians.</p>
+      </div>
+
+      <div class="gallery-grid" id="transformations-grid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Services Menu -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-luxury">✦ Tailored Treatments</span>
+        <h2>Our Luxury Service Menu</h2>
+        <p>Every service includes a personalized consultation and uses premium cruelty-free formulations.</p>
+      </div>
+
+      <div class="services-list-grid" id="services-grid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews & Testimonials -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-luxury">✦ Client Love</span>
+        <h2>What Our Guests Say</h2>
+        <p>Over <span data-reviews-count>200+</span> 5-star Google & Yelp reviews from clients across <span data-city>London</span>.</p>
+      </div>
+
+      <div class="reviews-grid" id="reviews-grid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="font-serif" style="font-size: 1.5rem; margin-bottom: 12px; color: #FFFFFF;">
+            ✨ <span data-business-name>Luxe Glow</span> Salon
+          </h3>
+          <p data-tagline>Luxury Hair Styling, Aesthetic Facials & Relaxing Spa Treatments.</p>
+          <p style="margin-top: 14px; font-size: 0.85rem;">
+            📍 <span data-address>78 Regent Street, Mayfair, London</span>
+          </p>
+        </div>
+
+        <div>
+          <h4>Opening Hours</h4>
+          <p data-hours>Tue - Sat: 9:00 AM - 8:00 PM<br>Sun: 10:00 AM - 5:00 PM<br>Mon: Closed</p>
+        </div>
+
+        <div>
+          <h4>Quick Contact</h4>
+          <p>📞 <a href="tel:" data-phone>+44 20 7946 0888</a></p>
+          <p>💬 <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></p>
+          <p style="margin-top: 14px; font-size: 0.82rem; color: #A39D97;">
+            Website Demo powered by <strong>WebKartX</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; <span id="year">2026</span> <span data-business-name>Luxe Glow Salon</span>. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

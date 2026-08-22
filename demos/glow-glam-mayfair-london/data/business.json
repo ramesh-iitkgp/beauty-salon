@@ -1,0 +1,50 @@
+{
+    "business_name": "Glow & Glam Mayfair",
+    "source_business_name": "Glow & Glam Mayfair",
+    "tagline": "Professional Cleaning Services in London",
+    "category": "Home Cleaning",
+    "phone": "+44 20 7946 0123",
+    "whatsapp": "",
+    "email": "bookings@glowglam.co.uk",
+    "website_url": "https://glowglammayfair.co.uk",
+    "address": "",
+    "city": "London",
+    "state": "",
+    "country": "UK",
+    "currency_symbol": "£",
+    "currency_code": "GBP",
+    "opening_hours": "",
+    "rating": "4.9",
+    "review_count": "140",
+    "google_maps_url": "",
+    "logo_url": "",
+    "hero_image": "",
+    "service_areas": [
+        "London"
+    ],
+    "social": {
+        "instagram": "",
+        "facebook": "",
+        "tiktok": ""
+    },
+    "before_after_pairs": [],
+    "services": [
+        {
+            "name": "Regular Home Cleaning",
+            "description": "",
+            "image": ""
+        },
+        {
+            "name": "Deep Cleaning",
+            "description": "",
+            "image": ""
+        },
+        {
+            "name": "Move-In / Move-Out Cleaning",
+            "description": "",
+            "image": ""
+        }
+    ],
+    "business_images": [],
+    "reviews": []
+}
