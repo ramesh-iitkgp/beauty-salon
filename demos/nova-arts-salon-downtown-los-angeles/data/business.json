@@ -1,0 +1,50 @@
+{
+    "business_name": "Nova Arts Salon",
+    "source_business_name": "Nova Arts Salon",
+    "tagline": "Professional Cleaning Services in Downtown Los Angeles",
+    "category": "Home Cleaning",
+    "phone": "13232444277",
+    "whatsapp": "",
+    "email": "info@novaartssalon.com",
+    "website_url": "https://www.novaartssalon.com/",
+    "address": "\n787 South Alameda Street #160 Located, at: ROW, Los Angeles, CA 90021, United States",
+    "city": "Downtown Los Angeles",
+    "state": "",
+    "country": "USA",
+    "currency_symbol": "$",
+    "currency_code": "USD",
+    "opening_hours": "",
+    "rating": "5",
+    "review_count": "",
+    "google_maps_url": "https://www.google.com/maps/place/Nova+Arts+Salon/data=!4m7!3m6!1s0x80c2c6264c526037:0x2fd6130e761a7c56!8m2!3d34.033671!4d-118.2410359!16s%2Fg%2F11f3nlhy72!19sChIJN2BSTCbGwoARVnwadg4T1i8?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1",
+    "logo_url": "",
+    "hero_image": "",
+    "service_areas": [
+        "Downtown Los Angeles"
+    ],
+    "social": {
+        "instagram": "https://www.instagram.com/novaartssalon/",
+        "facebook": "https://www.facebook.com/novaartssalon/",
+        "tiktok": ""
+    },
+    "before_after_pairs": [],
+    "services": [
+        {
+            "name": "Regular Home Cleaning",
+            "description": "",
+            "image": ""
+        },
+        {
+            "name": "Deep Cleaning",
+            "description": "",
+            "image": ""
+        },
+        {
+            "name": "Move-In / Move-Out Cleaning",
+            "description": "",
+            "image": ""
+        }
+    ],
+    "business_images": [],
+    "reviews": []
+}
