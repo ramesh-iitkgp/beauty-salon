@@ -1,0 +1,91 @@
+{
+    "business_name": "Hair By Fairy",
+    "source_business_name": "Hair By Fairy",
+    "tagline": "Professional Cleaning Services in London",
+    "category": "Home Cleaning",
+    "phone": "+44 20 7497 0776",
+    "whatsapp": "",
+    "email": "info@hairbyfairy.co.uk",
+    "website_url": "https://hairbyfairy.co.uk",
+    "address": "",
+    "city": "London",
+    "state": "",
+    "country": "United Kingdom",
+    "currency_symbol": "£",
+    "currency_code": "GBP",
+    "opening_hours": "",
+    "rating": "4.9",
+    "review_count": "140",
+    "google_maps_url": "",
+    "logo_url": "",
+    "hero_image": "",
+    "service_areas": [
+        "London"
+    ],
+    "social": {
+        "instagram": "",
+        "facebook": "",
+        "tiktok": ""
+    },
+    "before_after_pairs": [
+        {
+            "id": "balayage",
+            "badge": "Hair Balayage & Gloss",
+            "title": "Sun-Kissed Dimensional Blonde Balayage",
+            "description": "Brassiness neutralization, root melt, bond recovery, and mirror-shine blowout.",
+            "before": "./assets/hair_before.jpg",
+            "after": "./assets/hair_after.jpg",
+            "before_stats": "Dull brassy tones & dry frizzy ends",
+            "after_stats": "Luminous balayage & silky volume"
+        },
+        {
+            "id": "facial",
+            "badge": "Skincare Glow Facial",
+            "title": "Hydra-Infusion Pore Detox & Radiance",
+            "description": "Hydro-vacuum pore extraction, botanical peel, and hyaluronic acid ultrasonic infusion.",
+            "before": "./assets/skin_before.jpg",
+            "after": "./assets/skin_after.jpg",
+            "before_stats": "Congested pores & uneven texture",
+            "after_stats": "Plumped, dewy glass-skin glow"
+        },
+        {
+            "id": "nails",
+            "badge": "Russian BIAB Artistry",
+            "title": "Structured BIAB Gel & Glazed Chrome",
+            "description": "Precision dry e-file cuticle prep, BIAB apex overlay, and glazed donut chrome.",
+            "before": "./assets/nails_before.jpg",
+            "after": "./assets/nails_after.jpg",
+            "before_stats": "Chipped polish & ragged cuticles",
+            "after_stats": "Flawless 4-week structured gel"
+        },
+        {
+            "id": "brows",
+            "badge": "Brow & Lash Lamination",
+            "title": "Sculpted Brow Lift & Keratin Tint",
+            "description": "Custom feather brow lamination, shape mapping, and dramatic curled lash lift with deep tint.",
+            "before": "./assets/brow_before.jpg",
+            "after": "./assets/brow_after.jpg",
+            "before_stats": "Sparse untamed brows & straight lashes",
+            "after_stats": "Full fluffy laminated brows & lifted lashes"
+        }
+    ],
+    "services": [
+        {
+            "name": "Regular Home Cleaning",
+            "description": "",
+            "image": ""
+        },
+        {
+            "name": "Deep Cleaning",
+            "description": "",
+            "image": ""
+        },
+        {
+            "name": "Move-In / Move-Out Cleaning",
+            "description": "",
+            "image": ""
+        }
+    ],
+    "business_images": [],
+    "reviews": []
+}
