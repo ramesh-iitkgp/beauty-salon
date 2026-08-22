@@ -1,0 +1,50 @@
+{
+    "business_name": "Glow & Grace Salon",
+    "source_business_name": "Glow & Grace Salon",
+    "tagline": "Professional Cleaning Services in Mayfair, London",
+    "category": "Home Cleaning",
+    "phone": "+44 20 7946 0999",
+    "whatsapp": "",
+    "email": "contact@glowgrace.co.uk",
+    "website_url": "https://glowgrace.co.uk",
+    "address": "",
+    "city": "Mayfair, London",
+    "state": "",
+    "country": "UK",
+    "currency_symbol": "£",
+    "currency_code": "GBP",
+    "opening_hours": "",
+    "rating": "5.0",
+    "review_count": "210",
+    "google_maps_url": "",
+    "logo_url": "",
+    "hero_image": "",
+    "service_areas": [
+        "Mayfair, London"
+    ],
+    "social": {
+        "instagram": "",
+        "facebook": "",
+        "tiktok": ""
+    },
+    "before_after_pairs": [],
+    "services": [
+        {
+            "name": "Regular Home Cleaning",
+            "description": "",
+            "image": ""
+        },
+        {
+            "name": "Deep Cleaning",
+            "description": "",
+            "image": ""
+        },
+        {
+            "name": "Move-In / Move-Out Cleaning",
+            "description": "",
+            "image": ""
+        }
+    ],
+    "business_images": [],
+    "reviews": []
+}
