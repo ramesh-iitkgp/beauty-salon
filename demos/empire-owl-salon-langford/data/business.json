@@ -1,0 +1,50 @@
+{
+    "business_name": "Empire Owl Salon",
+    "source_business_name": "Empire Owl Salon",
+    "tagline": "Professional Cleaning Services in Langford",
+    "category": "Home Cleaning",
+    "phone": "+1 250 555 0199",
+    "whatsapp": "",
+    "email": "hello@empireowl.ca",
+    "website_url": "https://empireowl.ca",
+    "address": "",
+    "city": "Langford",
+    "state": "",
+    "country": "Canada",
+    "currency_symbol": "C$",
+    "currency_code": "CAD",
+    "opening_hours": "",
+    "rating": "5.0",
+    "review_count": "180",
+    "google_maps_url": "",
+    "logo_url": "",
+    "hero_image": "",
+    "service_areas": [
+        "Langford"
+    ],
+    "social": {
+        "instagram": "",
+        "facebook": "",
+        "tiktok": ""
+    },
+    "before_after_pairs": [],
+    "services": [
+        {
+            "name": "Regular Home Cleaning",
+            "description": "",
+            "image": ""
+        },
+        {
+            "name": "Deep Cleaning",
+            "description": "",
+            "image": ""
+        },
+        {
+            "name": "Move-In / Move-Out Cleaning",
+            "description": "",
+            "image": ""
+        }
+    ],
+    "business_images": [],
+    "reviews": []
+}
