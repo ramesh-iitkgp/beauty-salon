@@ -50,6 +50,17 @@
       margin: 0;
       padding: 0;
     }
+    html {
+      scroll-behavior: smooth;
+    }
+    #overview, #services, #calculator, #transformations, #reviews, #faqs {
+      scroll-margin-top: 130px;
+    }
+    @media (max-width: 640px) {
+      #overview, #services, #calculator, #transformations, #reviews, #faqs {
+        scroll-margin-top: 110px;
+      }
+    }
     body {
       font-family: 'Inter', sans-serif;
       background-color: #FAF6F0;
@@ -83,7 +94,7 @@
     <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-6">
       
       <!-- Brand Logo / Business Name (Isolated & Prominent, Truncated on Mobile to prevent overflow) -->
-      <a href="#" class="flex items-center gap-2 bg-white/80 border border-[#E8DCCF] px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm hover:border-primary transition-all min-w-0 max-w-[65vw] sm:max-w-[360px] md:max-w-none shrink">
+      <a href="#" class="flex items-center gap-2 bg-white/80 border border-[#E8DCCF] px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm hover:border-primary transition-all min-w-0 max-w-[62vw] sm:max-w-[360px] md:max-w-none shrink">
         <span class="flex items-center justify-center bg-primary text-white rounded-full size-6 sm:size-7 shadow-sm shrink-0">
           <i data-lucide="sparkles" class="size-3.5 sm:size-4"></i>
         </span>
@@ -94,7 +105,7 @@
 
       <!-- Nav Links (Center - Desktop) -->
       <div class="hidden lg:flex items-center space-x-7 text-sm font-normal text-foreground/80">
-        <a href="#" class="text-primary font-medium hover:text-primary-dark transition-colors font-sans">
+        <a href="#overview" class="text-primary font-medium hover:text-primary-dark transition-colors font-sans">
           Home
         </a>
         <a href="#transformations" class="hover:text-primary transition-colors font-sans font-medium">
@@ -113,7 +124,7 @@
 
       <!-- Action & Phone (Right) -->
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-        <a href="tel:" data-phone class="hidden sm:flex items-center gap-1.5 text-xs text-foreground/70 hover:text-primary transition-colors font-sans font-medium">
+        <a href="tel:" data-phone class="hidden md:flex items-center gap-1.5 text-xs text-foreground/70 hover:text-primary transition-colors font-sans font-medium">
           <i data-lucide="phone" class="size-3.5 text-primary"></i>
           <span data-phone-display>+44 20 7946 0888</span>
         </a>

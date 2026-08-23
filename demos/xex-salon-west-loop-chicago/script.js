@@ -336,11 +336,12 @@ function updateCalculatorDisplay() {
 function setupTabNavigation() {
   const topTabs = document.querySelectorAll(".section-tab");
   const bottomTabs = document.querySelectorAll(".mobile-bottom-tab");
+  const allNavLinks = document.querySelectorAll('a[href^="#"], [data-tab]');
   const sections = ["overview", "services", "calculator", "transformations", "reviews", "faqs"];
 
   function setActiveTab(targetId) {
     topTabs.forEach((tab) => {
-      const tabTarget = tab.getAttribute("data-tab");
+      const tabTarget = tab.getAttribute("data-tab") || (tab.getAttribute("href") || "").replace("#", "");
       if (tabTarget === targetId) {
         tab.className =
           "section-tab active inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-sans transition-all bg-primary text-white shadow-sm";
@@ -354,35 +355,30 @@ function setupTabNavigation() {
     });
 
     bottomTabs.forEach((tab) => {
-      const tabTarget = tab.getAttribute("data-tab");
+      const tabTarget = tab.getAttribute("data-tab") || (tab.getAttribute("href") || "").replace("#", "");
       if (tabTarget === targetId) {
         tab.classList.remove("text-foreground/60");
         tab.classList.add("text-primary", "font-semibold");
-      } else if (tabTarget) {
+      } else if (tabTarget && tabTarget !== "whatsapp") {
         tab.classList.remove("text-primary", "font-semibold");
         tab.classList.add("text-foreground/60");
       }
     });
   }
 
-  // Click listeners for smooth instant navigation
-  [...topTabs, ...bottomTabs].forEach((link) => {
+  // Click listeners for smooth instant navigation using native scrollIntoView
+  allNavLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
-      const targetId = link.getAttribute("data-tab");
-      if (targetId) {
+      const href = link.getAttribute("href") || "";
+      const dataTab = link.getAttribute("data-tab") || "";
+      const targetId = dataTab || (href.startsWith("#") ? href.replace("#", "") : "");
+
+      if (targetId && targetId !== "#" && targetId !== "whatsapp") {
         const el = document.getElementById(targetId);
         if (el) {
           e.preventDefault();
-          const offset = window.innerWidth < 640 ? 110 : 130;
-          const bodyRect = document.body.getBoundingClientRect().top;
-          const elementRect = el.getBoundingClientRect().top;
-          const elementPosition = elementRect - bodyRect;
-          const offsetPosition = elementPosition - offset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
+          e.stopPropagation();
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
           setActiveTab(targetId);
           try {
             history.replaceState(null, "", `#${targetId}`);
@@ -405,7 +401,7 @@ function setupTabNavigation() {
           }
         });
       },
-      { rootMargin: "-15% 0px -65% 0px" }
+      { rootMargin: "-10% 0px -65% 0px" }
     );
 
     sections.forEach((id) => {
