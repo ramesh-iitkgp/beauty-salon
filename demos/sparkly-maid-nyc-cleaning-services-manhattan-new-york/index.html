@@ -1,0 +1,1321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<base href="/home-cleaning/demos/sparkly-maid-nyc-cleaning-services-manhattan-new-york/">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Dynamic SEO & Metadata (Maintained & updated dynamically by script.js) -->
+    <title>Professional Home & Commercial Cleaning Services</title>
+    <meta name="description" content="Award-winning residential and commercial cleaning services tailored to local homes and businesses. Request a free instant quote today." />
+    <meta property="og:title" content="Professional Cleaning Services" />
+    <meta property="og:description" content="Impeccable residential and commercial cleaning services you can trust." />
+    <meta property="og:image" content="" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Modern Typography: Plus Jakarta Sans via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet (Relative path for subdirectory & custom hosting deployment) -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- =====================================================================
+         0. TOP ANNOUNCEMENT & DIRECT CONTACT BAR
+         ===================================================================== -->
+    <aside class="top-bar" id="top-bar" aria-label="Announcement and Quick Contact">
+      <div class="container top-bar-inner">
+        <div class="top-bar-promo">
+          <span class="promo-badge">✨ 15% OFF</span>
+          <span class="promo-text">First Deep Clean Booking • 100% Satisfaction Guaranteed</span>
+        </div>
+        <div class="top-bar-contacts">
+          <div class="top-contact-item data-hidden" id="top-bar-hours-container">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="top-bar-hours-val">Mon - Sat: 8:00 AM - 7:00 PM</span>
+          </div>
+          <div class="top-contact-item data-hidden" id="top-bar-email-container">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <a href="mailto:" id="top-bar-email-link"><span id="top-bar-email-val">contact@cleaning.com</span></a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- =====================================================================
+         1. NAVIGATION BAR
+         ===================================================================== -->
+    <header class="navbar" id="main-navbar">
+      <div class="container navbar-inner">
+        
+        <!-- Brand Identity -->
+        <a href="#" class="brand-identity" id="nav-brand-link" aria-label="Home">
+          <div id="nav-logo-container" style="display: none;"></div>
+          <div class="brand-fallback-badge" id="nav-brand-fallback">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+              <path d="M5 3v4"/>
+              <path d="M19 17v4"/>
+              <path d="M3 5h4"/>
+              <path d="M17 19h4"/>
+            </svg>
+          </div>
+          <span class="brand-name-text" data-bind="name">Super Cleaners</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav aria-label="Primary Navigation">
+          <ul class="nav-links">
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#before-after" class="nav-link">Before &amp; After</a></li>
+            <li><a href="#calculator" class="nav-link">Pricing Calculator</a></li>
+            <li><a href="#checklist" class="nav-link">Checklists</a></li>
+            <li><a href="#reviews" class="nav-link">Reviews</a></li>
+            <li><a href="#quote" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="nav-actions">
+          <a href="tel:" class="nav-phone-pill data-hidden" id="nav-phone-btn" aria-label="Call business">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span id="nav-phone-text">Call Now</span>
+          </a>
+
+          <a href="#calculator" class="btn btn-primary btn-sm nav-quote-btn" id="nav-quote-btn">
+            <span>Instant Quote</span>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="hamburger-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation Menu">
+      <ul class="mobile-nav-links">
+        <li><a href="#services" class="mobile-nav-link">Our Cleaning Services</a></li>
+        <li><a href="#before-after" class="mobile-nav-link">Before &amp; After Transformations</a></li>
+        <li><a href="#calculator" class="mobile-nav-link">Instant Cost Calculator</a></li>
+        <li><a href="#checklist" class="mobile-nav-link">Cleaning Checklists</a></li>
+        <li><a href="#gallery" class="mobile-nav-link">Photo Gallery</a></li>
+        <li><a href="#reviews" class="mobile-nav-link">Customer Reviews</a></li>
+        <li><a href="#service-areas" class="mobile-nav-link">Service Areas</a></li>
+        <li><a href="#quote" class="mobile-nav-link">Contact &amp; Bookings</a></li>
+      </ul>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
+        <a href="#calculator" class="btn btn-primary" style="width: 100%;">Calculate My Price &rarr;</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- =====================================================================
+           2. HERO SECTION
+           ===================================================================== -->
+      <!-- =====================================================================
+           2. MAGICAL HERO SECTION
+           ===================================================================== -->
+      <section class="hero" id="hero">
+        <!-- Ambient Aurora Lighting Effects -->
+        <div class="hero-aurora-glow glow-1" aria-hidden="true"></div>
+        <div class="hero-aurora-glow glow-2" aria-hidden="true"></div>
+        <div class="hero-aurora-glow glow-3" aria-hidden="true"></div>
+        
+        <div class="container hero-grid">
+          
+          <!-- Hero Text Content -->
+          <div class="hero-content">
+            
+            <!-- Top Announcement & Location Pills -->
+            <div class="hero-pill-row">
+              <div class="hero-announcement-pill">
+                <span class="hero-sparkle-icon">✨</span>
+                <span class="hero-announcement-text">Top-Rated Cleaning Specialists in <span data-bind="city">London</span></span>
+              </div>
+
+              <!-- Rating Badge Pill -->
+              <div class="hero-rating-pill data-hidden" id="hero-rating-pill">
+                <span class="star-icon">★</span>
+                <span id="hero-rating-score">4.9 (184+ Reviews)</span>
+              </div>
+
+              <!-- Years in Business Badge Pill -->
+              <div class="hero-experience-pill data-hidden" id="hero-experience-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+                <span id="hero-experience-text">12+ Years in Business</span>
+              </div>
+            </div>
+
+            <!-- Highly Prominent Business Name & Headline -->
+            <h1 class="hero-title">
+              Impeccable &amp; Spotless Living by <span class="hero-brand-name magical-gradient-text" id="hero-brand-name" data-bind="name">Super Cleaners London</span>
+            </h1>
+
+            <!-- Tagline & Subheading -->
+            <p class="hero-tagline" id="hero-tagline" data-bind="tagline">
+              Award-Winning Residential, Deep &amp; Move-Out Cleaning Specialists tailored to your lifestyle, standards, and schedule.
+            </p>
+
+            <!-- Conversion Action Buttons -->
+            <div class="hero-ctas">
+              <a href="#calculator" class="btn btn-primary btn-lg hero-main-cta" id="hero-quote-btn">
+                <span>Calculate Instant Price</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+
+              <a href="tel:" class="btn btn-secondary btn-lg hero-call-btn data-hidden" id="hero-call-btn" aria-label="Call business">
+                <span class="live-status-dot" aria-hidden="true"></span>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span id="hero-call-text">Call Now</span>
+              </a>
+            </div>
+
+            <!-- Trust Feature Bullet Checklist -->
+            <div class="hero-trust-bullets">
+              <div class="hero-bullet-item">
+                <div class="hero-bullet-icon">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span>Vetted &amp; Insured Cleaners</span>
+              </div>
+              <div class="hero-bullet-item">
+                <div class="hero-bullet-icon">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span>100% Eco-Safe Supplies</span>
+              </div>
+              <div class="hero-bullet-item">
+                <div class="hero-bullet-icon">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span>48-Hr Re-Clean Guarantee</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Visual & Single Clean Floating Trust Card -->
+          <div class="hero-visual-box">
+            
+            <!-- Main Hero Image Frame -->
+            <div class="hero-image-wrapper">
+              <img id="hero-main-img" src="./assets/hero_cleaner.jpg" alt="Professional Sparkling Clean Home" loading="eager" />
+              <div class="hero-img-overlay-gradient"></div>
+            </div>
+
+            <!-- Single Sleek Floating Glass Social Proof Badge -->
+            <div class="hero-floating-badge badge-bottom-right" id="hero-floating-rating">
+              <div class="floating-badge-icon gold-badge-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div>
+                <div class="floating-badge-title" id="floating-rating-title">4.9 ★ Top Rated</div>
+                <div class="floating-avatar-row">
+                  <div class="avatar-stack">
+                    <span class="avatar-circle av-1">V</span>
+                    <span class="avatar-circle av-2">J</span>
+                    <span class="avatar-circle av-3">E</span>
+                  </div>
+                  <span class="floating-badge-desc" id="floating-rating-desc">184+ Verified Reviews</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           3. SOCIAL PROOF & METRICS TRUST STRIP
+           ===================================================================== -->
+      <section class="trust-bar" id="trust-bar">
+        <div class="container trust-bar-grid">
+          
+          <!-- Rating Box -->
+          <div class="trust-metric-item" id="trust-rating-box">
+            <div class="trust-metric-icon gold-color">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <div class="trust-metric-val"><span id="trust-rating-score">4.9</span> / 5.0</div>
+              <div class="trust-metric-sub" id="trust-review-count">184+ Verified Google Reviews</div>
+            </div>
+          </div>
+
+          <!-- Serving Area Box -->
+          <div class="trust-metric-item">
+            <div class="trust-metric-icon brand-color">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-metric-val" id="trust-city-title"><span data-bind="city">London</span> &amp; Surrounds</div>
+              <div class="trust-metric-sub">Dedicated Local Cleaning Crews</div>
+            </div>
+          </div>
+
+          <!-- Years Experience / Standard Box -->
+          <div class="trust-metric-item">
+            <div class="trust-metric-icon accent-color">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-metric-val" id="trust-years-val">100% Quality Guaranteed</div>
+              <div class="trust-metric-sub">Checklist-Approved Perfection</div>
+            </div>
+          </div>
+
+          <!-- Google Maps Link Button -->
+          <div class="trust-metric-item trust-actions-item">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm trust-maps-btn data-hidden" id="trust-maps-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                <line x1="9" y1="3" x2="9" y2="18"></line>
+                <line x1="15" y1="6" x2="15" y2="21"></line>
+              </svg>
+              <span>View Google Map Profile</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           4. BEFORE & AFTER SECTION ("PROVEN TRANSFORMATIONS")
+           ===================================================================== -->
+      <section class="section before-after-section" id="before-after">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-badge">Proven Transformations</span>
+            <h2 class="section-title">The Difference is Crystal Clear</h2>
+            <p class="section-description">
+              Drag the interactive split slider to see how our intensive deep cleaning eliminates stubborn grime, limescale, grease, and clutter.
+            </p>
+          </div>
+
+          <div class="ba-container">
+            <!-- Dynamic Category Switcher Tabs -->
+            <div class="ba-tabs-row" id="ba-tabs-container"></div>
+
+            <!-- Interactive Split Slider Card -->
+            <div class="ba-slider-card">
+              <div class="ba-viewport" id="ba-viewport">
+                <!-- After Image (Background - Gleaming Clean) -->
+                <img id="ba-after-img" class="ba-img ba-img-after" src="" alt="After Professional Cleaning" />
+                <span class="ba-label ba-label-after">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                  </svg>
+                  AFTER (SPOTLESS)
+                </span>
+
+                <!-- Before Image (Clipped Left Layer - Dirty Grime) -->
+                <div class="ba-img-before-wrapper" id="ba-before-wrapper">
+                  <img id="ba-before-img" class="ba-img" src="" alt="Before Cleaning Dirty Condition" />
+                  <span class="ba-label ba-label-before">
+                    <span class="before-dot"></span>
+                    BEFORE (DIRTY)
+                  </span>
+                </div>
+
+                <!-- Draggable Divider Line & Handle -->
+                <div class="ba-handle" id="ba-handle">
+                  <div class="ba-handle-button" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Range Control for Accessibility & Touch Dragging -->
+                <input type="range" min="0" max="100" value="50" class="ba-slider-input" id="ba-slider-input" aria-label="Before and after comparison slider" />
+              </div>
+
+              <!-- Pair Transformation Highlights -->
+              <div class="ba-card-body">
+                <div class="ba-card-info">
+                  <h3 id="ba-item-title" class="ba-title-text">Kitchen Degreasing &amp; Stovetop Restoration</h3>
+                  <p id="ba-item-desc" class="ba-desc-text">Removal of heavy grease splatter, burnt stovetop carbon, stained backsplash, and messy clutter.</p>
+                  
+                  <div class="ba-stats-comparison">
+                    <span class="ba-stat-pill ba-stat-before">
+                      <strong>Condition Before:</strong> <span id="ba-before-stats">Heavy grease, clutter &amp; burnt carbon</span>
+                    </span>
+                    <span class="ba-stat-pill ba-stat-after">
+                      <strong>Result After:</strong> <span id="ba-after-stats">100% Degreased &amp; showroom shine</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="ba-card-cta">
+                  <a href="#calculator" class="btn btn-primary btn-sm">Get Similar Results &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           5. DYNAMIC SERVICES GRID
+           ===================================================================== -->
+      <section class="section section-alt" id="services">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-badge">Tailored Cleaning Packages</span>
+            <h2 class="section-title">Professional Cleaning Services by <span id="services-brand-heading" class="brand-highlight" data-bind="name">Super Cleaners London</span></h2>
+            <p class="section-description">
+              Flexible, high-standard residential and commercial cleaning packages customized to your lifestyle, property type, and hygiene standards.
+            </p>
+          </div>
+
+          <!-- Dynamically Injected Services Grid -->
+          <div class="services-grid" id="services-grid-container">
+            <!-- Rendered by script.js from data/business.json services -->
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           6. INTERACTIVE INSTANT ESTIMATE & QUOTE CALCULATOR
+           ===================================================================== -->
+      <section class="section calculator-section" id="calculator">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-badge">Instant Transparent Pricing</span>
+            <h2 class="section-title">Calculate Your Cleaning Cost in Seconds</h2>
+            <p class="section-description">
+              Select your property size, cleaning frequency, and required add-ons for an accurate real-time price estimate.
+            </p>
+          </div>
+
+          <div class="calculator-card-wrapper">
+            <div class="calculator-grid">
+              
+              <!-- Left Column: Interactive Inputs -->
+              <div class="calculator-inputs">
+                
+                <!-- 1. Property Type -->
+                <div class="calc-group">
+                  <label class="calc-label">1. Select Property Type</label>
+                  <div class="calc-chip-row" id="calc-property-chips">
+                    <button type="button" class="calc-chip active" data-type="apartment">🏢 Apartment / Condo</button>
+                    <button type="button" class="calc-chip" data-type="house">🏡 Single Family Home</button>
+                    <button type="button" class="calc-chip" data-type="office">💼 Office / Studio</button>
+                  </div>
+                </div>
+
+                <!-- 2. Bedrooms & Bathrooms Counters -->
+                <div class="calc-counters-grid">
+                  <div class="calc-counter-box">
+                    <span class="calc-counter-label">Bedrooms / Rooms</span>
+                    <div class="calc-stepper">
+                      <button type="button" class="stepper-btn" id="bed-minus" aria-label="Decrease bedrooms">-</button>
+                      <span class="stepper-val" id="bed-count">2</span>
+                      <button type="button" class="stepper-btn" id="bed-plus" aria-label="Increase bedrooms">+</button>
+                    </div>
+                  </div>
+
+                  <div class="calc-counter-box">
+                    <span class="calc-counter-label">Bathrooms</span>
+                    <div class="calc-stepper">
+                      <button type="button" class="stepper-btn" id="bath-minus" aria-label="Decrease bathrooms">-</button>
+                      <span class="stepper-val" id="bath-count">1</span>
+                      <button type="button" class="stepper-btn" id="bath-plus" aria-label="Increase bathrooms">+</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. Service Scope -->
+                <div class="calc-group">
+                  <label class="calc-label">2. Cleaning Package Tier</label>
+                  <div class="calc-tier-grid" id="calc-tier-grid">
+                    <div class="calc-tier-card active" data-tier="regular">
+                      <div class="tier-radio-dot"></div>
+                      <div>
+                        <div class="tier-title">Regular Maintenance Clean</div>
+                        <div class="tier-desc">Surface dusting, vacuuming, mopping, kitchen &amp; bath sanitize.</div>
+                      </div>
+                    </div>
+                    <div class="calc-tier-card" data-tier="deep">
+                      <div class="tier-radio-dot"></div>
+                      <div>
+                        <div class="tier-title">Intensive Deep Scrub</div>
+                        <div class="tier-desc">Detailed descaling, behind furniture, baseboards &amp; tile grout.</div>
+                      </div>
+                    </div>
+                    <div class="calc-tier-card" data-tier="move">
+                      <div class="tier-radio-dot"></div>
+                      <div>
+                        <div class="tier-title">End of Tenancy / Move-Out</div>
+                        <div class="tier-desc">100% deposit-ready handover deep scrub with inside cupboards.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4. Frequency Discounts -->
+                <div class="calc-group">
+                  <label class="calc-label">3. Cleaning Frequency (Recurring Discounts)</label>
+                  <div class="calc-freq-row" id="calc-freq-chips">
+                    <button type="button" class="calc-freq-chip" data-freq="one-time">One-Time</button>
+                    <button type="button" class="calc-freq-chip active" data-freq="bi-weekly">Bi-Weekly <span class="freq-tag">SAVE 15%</span></button>
+                    <button type="button" class="calc-freq-chip" data-freq="weekly">Weekly <span class="freq-tag">SAVE 20%</span></button>
+                    <button type="button" class="calc-freq-chip" data-freq="monthly">Monthly <span class="freq-tag">SAVE 10%</span></button>
+                  </div>
+                </div>
+
+                <!-- 5. Popular Add-ons -->
+                <div class="calc-group">
+                  <label class="calc-label">4. Optional Add-On Deep Cleans</label>
+                  <div class="calc-addons-grid" id="calc-addons-grid">
+                    <label class="addon-checkbox-card">
+                      <input type="checkbox" class="calc-addon-input" data-addon="oven" value="35">
+                      <span class="addon-name">♨️ Oven Deep Clean</span>
+                      <span class="addon-price" id="addon-price-oven">+£35</span>
+                    </label>
+                    <label class="addon-checkbox-card">
+                      <input type="checkbox" class="calc-addon-input" data-addon="fridge" value="25">
+                      <span class="addon-name">❄️ Fridge Interior</span>
+                      <span class="addon-price" id="addon-price-fridge">+£25</span>
+                    </label>
+                    <label class="addon-checkbox-card">
+                      <input type="checkbox" class="calc-addon-input" data-addon="windows" value="30">
+                      <span class="addon-name">🪟 Interior Windows</span>
+                      <span class="addon-price" id="addon-price-windows">+£30</span>
+                    </label>
+                    <label class="addon-checkbox-card">
+                      <input type="checkbox" class="calc-addon-input" data-addon="carpet" value="50">
+                      <span class="addon-name">🧼 Carpet Steam Scrub</span>
+                      <span class="addon-price" id="addon-price-carpet">+£50</span>
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Right Column: Live Price Summary & Direct Action -->
+              <div class="calculator-summary">
+                <div class="summary-card">
+                  <div class="summary-header">
+                    <span class="summary-pill">Live Estimate</span>
+                    <h3 class="summary-title">Your Estimated Cleaning Quote</h3>
+                  </div>
+
+                  <div class="summary-price-box">
+                    <div class="summary-currency-row">
+                      <span class="currency-symbol" id="calc-currency-symbol">£</span>
+                      <span class="price-val" id="calc-total-price">85</span>
+                    </div>
+                    <span class="summary-cycle" id="calc-cycle-text">per clean (estimated)</span>
+                  </div>
+
+                  <div class="summary-breakdown">
+                    <div class="breakdown-row">
+                      <span id="breakdown-scope-name">2 Bed, 1 Bath • Bi-Weekly</span>
+                      <span id="breakdown-base-price">£100</span>
+                    </div>
+                    <div class="breakdown-row discount-row" id="breakdown-discount-row">
+                      <span>Frequency Discount (15%)</span>
+                      <span id="breakdown-discount-price">-£15</span>
+                    </div>
+                    <div class="breakdown-row" id="breakdown-addons-row" style="display: none;">
+                      <span>Selected Add-ons</span>
+                      <span id="breakdown-addons-price">+£0</span>
+                    </div>
+                  </div>
+
+                  <div class="summary-guarantee-note">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    <span>All supplies, eco-friendly detergents &amp; insurance included. Zero hidden costs.</span>
+                  </div>
+
+                  <div class="summary-actions">
+                    <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp summary-btn" id="calc-whatsapp-btn">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.07-.1-.23-.17-.48-.29"/>
+                      </svg>
+                      <span>Book via WhatsApp</span>
+                    </a>
+                    
+                    <a href="#quote" class="btn btn-primary summary-btn" id="calc-form-btn">
+                      <span>Reserve Appointment &rarr;</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           7. INTERACTIVE CLEANING CHECKLIST MATRIX
+           ===================================================================== -->
+      <section class="section" id="checklist">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-badge">Comprehensive Room Standards</span>
+            <h2 class="section-title">What's Included in Our Cleaning Scope</h2>
+            <p class="section-description">
+              Our systematic inspection checklists guarantee zero missed corners across every room in your home.
+            </p>
+          </div>
+
+          <!-- Room Category Switcher Tabs -->
+          <div class="checklist-tabs-row" id="checklist-tabs">
+            <button type="button" class="checklist-tab active" data-room="kitchen">🍳 Kitchen Perfection</button>
+            <button type="button" class="checklist-tab" data-room="bathrooms">🚿 Bathrooms &amp; Tiles</button>
+            <button type="button" class="checklist-tab" data-room="living">🛋️ Living &amp; Bedrooms</button>
+            <button type="button" class="checklist-tab" data-room="moveout">📦 Move-Out Handover</button>
+          </div>
+
+          <!-- Room Checklist Panels -->
+          <div class="checklist-panel-container">
+            
+            <!-- Kitchen Panel -->
+            <div class="checklist-panel active" id="panel-kitchen">
+              <div class="checklist-grid">
+                <div class="check-item"><span class="check-icon">✓</span><span>Degrease stovetop, burner rings &amp; control knobs</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Scrub &amp; disinfect stainless steel sink &amp; chrome taps</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Wipe exterior of refrigerator, oven, dishwasher &amp; hood</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Clean microwave interior &amp; turntable glass</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Wipe cabinet fronts, handles &amp; backsplash tiles</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Sanitize all countertop surfaces &amp; small appliances</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Vacuum and mop hard floors with grease-cutting solution</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Empty trash bins &amp; replace liners</span></div>
+              </div>
+            </div>
+
+            <!-- Bathrooms Panel -->
+            <div class="checklist-panel" id="panel-bathrooms">
+              <div class="checklist-grid">
+                <div class="check-item"><span class="check-icon">✓</span><span>Descale bathtub, shower stall &amp; glass doors</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Scrub &amp; disinfect toilet bowl, seat, rim &amp; base</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Deep polish sink basin, vanity &amp; chrome fixtures</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Buff bathroom mirrors to a streak-free shine</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Scrub tile grout lines to lift soap scum &amp; mild mildew</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Wipe vanity cabinets, drawers &amp; light switches</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Disinfect &amp; mop tile flooring</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Restock and fold towels neatly</span></div>
+              </div>
+            </div>
+
+            <!-- Living & Bedrooms Panel -->
+            <div class="checklist-panel" id="panel-living">
+              <div class="checklist-grid">
+                <div class="check-item"><span class="check-icon">✓</span><span>Dust all flat surfaces, shelving, frames &amp; lamps</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Make beds &amp; change bed linens (upon request)</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Vacuum carpets, rugs &amp; underneath reachable beds</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Mop hardwood, laminate &amp; stone floors</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Wipe window sills, door frames &amp; baseboards</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Dust ceiling fan blades &amp; accessible vent covers</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Straighten cushions, throws &amp; general clutter</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Wipe high-touch light switches &amp; door knobs</span></div>
+              </div>
+            </div>
+
+            <!-- Move-Out Panel -->
+            <div class="checklist-panel" id="panel-moveout">
+              <div class="checklist-grid">
+                <div class="check-item"><span class="check-icon">✓</span><span>Full interior &amp; exterior wipe-down of all empty cupboards</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Deep inside oven degreasing &amp; rack soaking included</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Deep inside refrigerator &amp; freezer disinfection</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Wash baseboards, radiator panels &amp; doors top-to-bottom</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Scrub limescale &amp; hard water marks from all bathrooms</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Interior window glass, frames &amp; track cleaning</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>Wall spot-cleaning &amp; scuff mark removal</span></div>
+                <div class="check-item"><span class="check-icon">✓</span><span>48-Hour Guarantee: Free re-clean if landlord spots issues</span></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           8. WHY CHOOSE [BUSINESS NAME]
+           ===================================================================== -->
+      <section class="section section-alt" id="why-us">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-badge">Our Commitment</span>
+            <h2 class="section-title">Why Homeowners Trust <span id="why-brand-heading" class="brand-highlight" data-bind="name">Super Cleaners London</span></h2>
+            <p class="section-description">
+              We combine vetted professional cleaners, hospital-grade non-toxic supplies, and reliable scheduling to give you complete peace of mind.
+            </p>
+          </div>
+
+          <div class="why-grid">
+            
+            <div class="why-card">
+              <div class="why-icon-box brand-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+              </div>
+              <h3 class="why-card-title">Vetted &amp; Background-Checked</h3>
+              <p class="why-card-text">Every cleaner undergoes rigorous background verification, in-person skill testing, and ongoing quality supervision.</p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon-box teal-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <h3 class="why-card-title">Flexible Scheduling</h3>
+              <p class="why-card-text">Weekly, bi-weekly, monthly, or on-demand deep cleanings structured seamlessly around your busy personal or work schedule.</p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon-box gold-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <h3 class="why-card-title">Transparent Upfront Pricing</h3>
+              <p class="why-card-text">Clear quotes based strictly on property size and requested scope. No surprise fees, parking surcharges, or hidden fees.</p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon-box brand-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+              </div>
+              <h3 class="why-card-title">Detailed Room Checklists</h3>
+              <p class="why-card-text">Systematic inspection routines for kitchens, bathrooms, living areas, and offices ensure zero missed corners on every visit.</p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon-box teal-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a10 10 0 0 0-7.55 16.55L2 22l5.45-2.45A10 10 0 1 0 12 2z"/>
+                </svg>
+              </div>
+              <h3 class="why-card-title">Direct Local Support</h3>
+              <p class="why-card-text">Fast, responsive client service on WhatsApp, phone, and email for hassle-free appointment changes and special requests.</p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon-box gold-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <h3 class="why-card-title">Proudly Serving <span data-bind="city">Your Area</span></h3>
+              <p class="why-card-text">Dedicated to neighborhood homeowners and businesses across <span data-bind="city">London</span> with punctual and trusted service.</p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           9. FILTERABLE PHOTO GALLERY & LIGHTBOX
+           ===================================================================== -->
+      <section class="section" id="gallery">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-badge">Recent Project Portfolio</span>
+            <h2 class="section-title">Spotless Results from <span id="gallery-brand-name" class="brand-highlight" data-bind="name">Super Cleaners London</span></h2>
+            <p class="section-description">
+              Browse our portfolio of pristine living rooms, gourmet kitchens, sparkling bathrooms, and commercial spaces.
+            </p>
+          </div>
+
+          <!-- Dynamic Gallery Grid -->
+          <div class="gallery-grid" id="gallery-grid-container">
+            <!-- Injected by script.js -->
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           10. VERIFIED REVIEWS & TESTIMONIALS
+           ===================================================================== -->
+      <section class="section section-alt" id="reviews">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-badge">Verified Customer Proof</span>
+            <h2 class="section-title">What Clients Say About <span id="reviews-brand-heading" class="brand-highlight" data-bind="name">Super Cleaners London</span></h2>
+            <p class="section-description">
+              Real testimonials from homeowners, landlords, and tenants who rely on our consistent cleaning standards.
+            </p>
+          </div>
+
+          <!-- Reviews Grid -->
+          <div class="reviews-grid" id="reviews-grid-container">
+            <!-- Injected by script.js -->
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           11. SERVICE AREAS COVERAGE & INTERACTIVE LOOKUP
+           ===================================================================== -->
+      <section class="section service-areas-section" id="service-areas">
+        <div class="container">
+          
+          <div class="service-areas-card">
+            <div class="service-areas-header">
+              <span class="section-badge">Local Coverage</span>
+              <h2 class="section-title" id="service-areas-heading">Neighborhoods We Proudly Serve in <span data-bind="city">London</span></h2>
+              <p class="section-description">
+                Our mobile cleaning teams operate throughout <span data-bind="city">London</span> and surrounding areas. Check your location below:
+              </p>
+            </div>
+
+            <!-- Interactive Suburb / Postcode Lookup -->
+            <div class="area-lookup-box">
+              <div class="area-input-wrapper">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="area-search-input" class="area-search-input" placeholder="Type your suburb or postcode (e.g., Marylebone, W1U)..." />
+              </div>
+              <div id="area-lookup-result" class="area-lookup-result"></div>
+            </div>
+
+            <!-- Dynamic Area Pills Grid -->
+            <div class="service-areas-tags" id="service-areas-pills"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           12. 100% SATISFACTION GUARANTEE BANNER
+           ===================================================================== -->
+      <section class="guarantee-section">
+        <div class="container guarantee-inner">
+          <div class="guarantee-badge-seal">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="guarantee-text">
+            <h3>Our 100% Spotless Satisfaction Guarantee</h3>
+            <p>If you're not completely delighted with any area we've cleaned, simply let us know within 24 hours and our team will return to re-clean it free of charge.</p>
+          </div>
+          <div>
+            <a href="#calculator" class="btn btn-primary btn-lg">Book With Confidence &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           13. CONTACT & DIRECT BOOKING SECTION
+           ===================================================================== -->
+      <section class="section section-alt" id="quote">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-badge">Get In Touch</span>
+            <h2 class="section-title">Contact &amp; Custom Quote Inquiries</h2>
+            <p class="section-description">
+              Have specific cleaning requirements, commercial inquiries, or unique property needs? Contact our team directly.
+            </p>
+          </div>
+
+          <div class="quote-grid">
+            
+            <!-- Left Column: Business Identity & Contact Info -->
+            <div class="quote-info-card">
+              <div class="quote-info-header">
+                <h3 data-bind="name" class="quote-brand-title">Super Cleaners London</h3>
+                <p data-bind="tagline" class="quote-brand-tagline">Award-Winning Residential, Deep &amp; Move-Out Cleaning Specialists</p>
+              </div>
+
+              <!-- Contact Items List -->
+              <div class="contact-info-list">
+                
+                <!-- Direct Phone -->
+                <div class="contact-item data-hidden" id="contact-phone-container">
+                  <div class="contact-icon-box brand-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-item-label">Direct Phone Line</div>
+                    <div class="contact-item-val"><a href="tel:" id="contact-phone-link"><span id="contact-phone-val">+44 20 7946 0912</span></a></div>
+                  </div>
+                </div>
+
+                <!-- WhatsApp Quick Connect -->
+                <div class="contact-item data-hidden" id="contact-whatsapp-container">
+                  <div class="contact-icon-box whatsapp-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.07-.1-.23-.17-.48-.29"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-item-label">WhatsApp Business</div>
+                    <div class="contact-item-val"><a href="https://wa.me/" target="_blank" rel="noopener noreferrer" id="contact-whatsapp-link" class="whatsapp-link"><span>Chat on WhatsApp</span> &rarr;</a></div>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-item data-hidden" id="contact-email-container">
+                  <div class="contact-icon-box brand-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-item-label">Email Inquiries</div>
+                    <div class="contact-item-val"><a href="mailto:" id="contact-email-link"><span id="contact-email-val">contact@supercleanerslondon.co.uk</span></a></div>
+                  </div>
+                </div>
+
+                <!-- Address -->
+                <div class="contact-item data-hidden" id="contact-address-container">
+                  <div class="contact-icon-box brand-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-item-label">Headquarters / Depot Base</div>
+                    <div class="contact-item-val"><span id="contact-address-val">45 Baker Street, Marylebone, London W1U 8ED</span></div>
+                  </div>
+                </div>
+
+                <!-- Operating Hours -->
+                <div class="contact-item data-hidden" id="contact-hours-container">
+                  <div class="contact-icon-box brand-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-item-label">Operating Schedule</div>
+                    <div class="contact-item-val"><span id="contact-hours-val">Mon - Sat: 8:00 AM - 7:00 PM | Sun: 9:00 AM - 4:00 PM</span></div>
+                  </div>
+                </div>
+
+                <!-- Website Link -->
+                <div class="contact-item data-hidden" id="contact-website-container">
+                  <div class="contact-icon-box brand-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-item-label">Official Website</div>
+                    <div class="contact-item-val"><a href="#" target="_blank" rel="noopener noreferrer" id="contact-website-link"><span id="contact-website-val">supercleanerslondon.co.uk</span> &rarr;</a></div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Social Media Profiles -->
+              <div class="quote-social-section">
+                <span class="social-label">Follow &amp; Connect With Us:</span>
+                <div class="quote-social-row">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn data-hidden" id="contact-social-instagram" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn data-hidden" id="contact-social-facebook" aria-label="Facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn data-hidden" id="contact-social-tiktok" aria-label="TikTok">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn data-hidden" id="contact-social-linkedin" aria-label="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn data-hidden" id="contact-social-youtube" aria-label="YouTube">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><polygon points="10 15 15 12 10 9 10 15"/></svg>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn data-hidden" id="contact-social-twitter" aria-label="Twitter / X">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn data-hidden" id="contact-social-yelp" aria-label="Yelp Reviews">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5v-3.8l3.3 1.9a.8.8 0 0 1-.3 1.4zm-2 0a.8.8 0 0 1-1.1-.4l1.1-1.9zm0-5.7-3.3-1.9a.8.8 0 0 1 .3-1.4l3 3.3zm4-1.9-3 3.3V8.1a.8.8 0 0 1 1.4-.3z"/></svg>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon-btn data-hidden" id="contact-social-maps" aria-label="Google Maps Location">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Column: Interactive Booking Inquiry Form -->
+            <div class="quote-form-card">
+              <h3 class="quote-form-title">Send a Booking Inquiry</h3>
+              <p class="quote-form-desc">Fill out your contact details and our team will confirm your appointment promptly.</p>
+
+              <form id="quote-booking-form">
+                <div class="form-grid">
+                  
+                  <!-- Service Type -->
+                  <div class="form-group form-full">
+                    <label class="form-label" for="quote-service-select">Select Service Package *</label>
+                    <select class="form-select" id="quote-service-select" required>
+                      <option value="">Select a service package...</option>
+                    </select>
+                  </div>
+
+                  <!-- Frequency -->
+                  <div class="form-group">
+                    <label class="form-label" for="quote-frequency">Frequency</label>
+                    <select class="form-select" id="quote-frequency">
+                      <option value="Bi-Weekly Maintenance" selected>Bi-Weekly Maintenance (Save 15%)</option>
+                      <option value="Weekly Maid Service">Weekly Maid Service (Save 20%)</option>
+                      <option value="One-Time Deep Clean">One-Time Intensive Deep Clean</option>
+                      <option value="Monthly Service">Monthly Service (Save 10%)</option>
+                      <option value="End of Tenancy">End of Tenancy / Move-Out Turnover</option>
+                    </select>
+                  </div>
+
+                  <!-- Property Size -->
+                  <div class="form-group">
+                    <label class="form-label" for="quote-size">Property Size</label>
+                    <select class="form-select" id="quote-size">
+                      <option value="1 Bedroom / 1 Bath">1 Bedroom / 1 Bath</option>
+                      <option value="2 Bedroom / 1-2 Bath" selected>2 Bedroom / 1-2 Bath</option>
+                      <option value="3 Bedroom / 2 Bath">3 Bedroom / 2 Bath</option>
+                      <option value="4+ Bedroom House">4+ Bedroom House / Estate</option>
+                      <option value="Commercial Office">Commercial / Studio Space</option>
+                    </select>
+                  </div>
+
+                  <!-- Name -->
+                  <div class="form-group">
+                    <label class="form-label" for="quote-name">Full Name *</label>
+                    <input type="text" class="form-input" id="quote-name" placeholder="e.g., Sarah Jenkins" required />
+                  </div>
+
+                  <!-- Phone -->
+                  <div class="form-group">
+                    <label class="form-label" for="quote-phone">Phone Number *</label>
+                    <input type="tel" class="form-input" id="quote-phone" placeholder="e.g., +44 20 7946 0912" required />
+                  </div>
+
+                  <!-- Email -->
+                  <div class="form-group form-full">
+                    <label class="form-label" for="quote-email">Email Address</label>
+                    <input type="email" class="form-input" id="quote-email" placeholder="sarah@example.com" />
+                  </div>
+
+                  <!-- Notes -->
+                  <div class="form-group form-full">
+                    <label class="form-label" for="quote-notes">Address &amp; Cleaning Instructions</label>
+                    <textarea class="form-textarea" id="quote-notes" placeholder="Tell us your street address, preferred day/time, or special requests (e.g., pets in home, key lockbox code)..."></textarea>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div class="form-full" style="margin-top: 6px;">
+                    <button type="submit" class="btn btn-primary" id="quote-submit-btn" style="width: 100%; font-size: 1.05rem;">
+                      <span>Submit Booking Request</span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                      </svg>
+                    </button>
+                  </div>
+
+                </div>
+
+                <!-- Feedback Box -->
+                <div class="form-feedback-box" id="quote-form-feedback"></div>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================================
+         14. MODERN FOOTER
+         ===================================================================== -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        
+        <div class="footer-grid">
+          
+          <!-- Column 1: Brand & Tagline -->
+          <div class="footer-brand-col">
+            <div class="footer-brand-title-row">
+              <div id="footer-logo-container" style="display: none;"></div>
+              <div class="brand-fallback-badge" id="footer-brand-fallback">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                  <path d="M5 3v4"/>
+                  <path d="M19 17v4"/>
+                  <path d="M3 5h4"/>
+                  <path d="M17 19h4"/>
+                </svg>
+              </div>
+              <h3 id="footer-brand-name" data-bind="name" class="footer-company-name">Super Cleaners London</h3>
+            </div>
+            <p id="footer-tagline" data-bind="tagline" class="footer-tagline-text">
+              Award-Winning Residential, Deep &amp; Move-Out Cleaning Specialists.
+            </p>
+            <div class="footer-serving-note">
+              Serving: <strong id="footer-city-text" data-bind="city">London, United Kingdom</strong>
+            </div>
+            <div class="footer-rating-pill" id="footer-rating-pill">
+              <span>★ 4.9 Rating</span> • <span>Vetted &amp; Insured</span>
+            </div>
+          </div>
+
+          <!-- Column 2: Navigation Links -->
+          <div>
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links-list">
+              <li><a href="#services" class="footer-link">Cleaning Packages</a></li>
+              <li><a href="#before-after" class="footer-link">Before &amp; After Results</a></li>
+              <li><a href="#calculator" class="footer-link">Cost Calculator</a></li>
+              <li><a href="#checklist" class="footer-link">Room Checklists</a></li>
+              <li><a href="#why-us" class="footer-link">Why Choose Us</a></li>
+              <li><a href="#gallery" class="footer-link">Our Work Gallery</a></li>
+              <li><a href="#reviews" class="footer-link">Verified Reviews</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Direct Contact Details -->
+          <div>
+            <h4 class="footer-heading">Contact Details</h4>
+            <div class="footer-links-list">
+              <div class="footer-contact-item data-hidden" id="footer-phone-container">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <a href="tel:" class="footer-link" id="footer-phone-link">+44 20 7946 0912</a>
+              </div>
+              <div class="footer-contact-item data-hidden" id="footer-whatsapp-container">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.07-.1-.23-.17-.48-.29"/></svg>
+                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="footer-link" id="footer-whatsapp-link" style="color: #25D366;">WhatsApp Chat</a>
+              </div>
+              <div class="footer-contact-item data-hidden" id="footer-email-container">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <a href="mailto:" class="footer-link" id="footer-email-link">contact@supercleanerslondon.co.uk</a>
+              </div>
+              <div class="footer-contact-item data-hidden" id="footer-address-container">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span class="footer-link" id="footer-address-val">45 Baker Street, Marylebone, London W1U 8ED</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 4: Standard & Hours -->
+          <div>
+            <h4 class="footer-heading">Hours &amp; Hygiene</h4>
+            <p style="font-size: 0.875rem; line-height: 1.6; color: #94a3b8; margin-bottom: 12px;">
+              <span id="footer-hours-val">Mon - Sat: 8:00 AM - 7:00 PM<br>Sun: 9:00 AM - 4:00 PM</span>
+            </p>
+            <p style="font-size: 0.85rem; line-height: 1.5; color: #64748b;">
+              Hospital-grade disinfection, pet-friendly supplies &amp; full property coverage on every booking.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Bottom Copyright Row -->
+        <div class="footer-bottom-row">
+          <p>&copy; <span id="footer-year">2026</span> <span data-bind="name">Super Cleaners London</span>. All rights reserved.</p>
+          <p style="color: #64748b; font-size: 0.85rem;"><span data-bind="category">Residential &amp; Commercial Cleaning</span></p>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- =====================================================================
+         15. MOBILE STICKY ACTION BAR
+         ===================================================================== -->
+    <div class="mobile-sticky-bar" id="mobile-sticky-bar">
+      <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm data-hidden" id="mobile-sticky-whatsapp-btn" aria-label="WhatsApp Business">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.07-.1-.23-.17-.48-.29"/>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+      <a href="tel:" class="btn btn-secondary btn-sm data-hidden" id="mobile-sticky-call-btn" aria-label="Call Business">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span>Call</span>
+      </a>
+      <a href="#calculator" class="btn btn-primary btn-sm" id="mobile-sticky-quote-btn">
+        <span>Instant Quote</span>
+      </a>
+    </div>
+
+    <!-- =====================================================================
+         16. FULLSCREEN LIGHTBOX MODAL
+         ===================================================================== -->
+    <div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox()">
+      <button class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close Lightbox">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <button class="lightbox-nav-btn lightbox-prev" onclick="event.stopPropagation(); navigateLightbox(-1)" aria-label="Previous image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="lightbox-img-wrapper" onclick="event.stopPropagation()">
+        <img id="lightbox-img" src="" alt="Enlarged cleaning project" />
+      </div>
+
+      <button class="lightbox-nav-btn lightbox-next" onclick="event.stopPropagation(); navigateLightbox(1)" aria-label="Next image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- =====================================================================
+         17. MULTI-REGION & MULTI-BUSINESS DEMO SWITCHER
+         ===================================================================== -->
+    <div class="demo-switcher-fab">
+      <button class="demo-fab-btn" id="demo-switcher-btn" title="Switch Multi-Region Demo Profiles">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span>Preview Regions (US, UK, NZ, AUS, India, Canada)</span>
+      </button>
+    </div>
+
+    <div class="demo-switcher-modal" id="demo-switcher-modal">
+      <div class="demo-modal-card">
+        <div class="demo-modal-header">
+          <h3 class="demo-modal-title">Regional Template Customizer</h3>
+          <button id="demo-modal-close" class="demo-modal-close-btn">&times;</button>
+        </div>
+        <div class="demo-modal-body">
+          <p class="demo-modal-desc">
+            Test how this dynamic template automatically adapts branding, currency ($ / £ / A$ / NZ$ / C$ / ₹), phone formats, addresses, and localized service areas:
+          </p>
+
+          <div class="demo-presets-list">
+            <button class="demo-preset-card active" data-preset="live">
+              <span class="demo-preset-flag">🇬🇧</span>
+              <div>
+                <span class="demo-preset-title">1. United Kingdom (Live business.json)</span>
+                <span class="demo-preset-desc">Super Cleaners London • GBP (£) • Baker St, Westminster &amp; Marylebone</span>
+              </div>
+            </button>
+
+            <button class="demo-preset-card" data-preset="us_chicago">
+              <span class="demo-preset-flag">🇺🇸</span>
+              <div>
+                <span class="demo-preset-title">2. United States (Chicago, IL)</span>
+                <span class="demo-preset-desc">Apex Deep Clean Pro • USD ($) • Michigan Ave, Lincoln Park &amp; Loop</span>
+              </div>
+            </button>
+
+            <button class="demo-preset-card" data-preset="aus_sydney">
+              <span class="demo-preset-flag">🇦🇺</span>
+              <div>
+                <span class="demo-preset-title">3. Australia (Sydney, NSW)</span>
+                <span class="demo-preset-desc">Bondi Pristine Cleaning Co • AUD (A$) • Eastern Suburbs, CBD &amp; Manly</span>
+              </div>
+            </button>
+
+            <button class="demo-preset-card" data-preset="nz_auckland">
+              <span class="demo-preset-flag">🇳🇿</span>
+              <div>
+                <span class="demo-preset-title">4. New Zealand (Auckland)</span>
+                <span class="demo-preset-desc">Kiwi Sparkle Home Services • NZD (NZ$) • Ponsonby, CBD &amp; Takapuna</span>
+              </div>
+            </button>
+
+            <button class="demo-preset-card" data-preset="ca_toronto">
+              <span class="demo-preset-flag">🇨🇦</span>
+              <div>
+                <span class="demo-preset-title">5. Canada (Toronto, ON)</span>
+                <span class="demo-preset-desc">Maple Leaf Spotless Homes • CAD (C$) • Downtown, Yorkville &amp; Etobicoke</span>
+              </div>
+            </button>
+
+            <button class="demo-preset-card" data-preset="in_mumbai">
+              <span class="demo-preset-flag">🇮🇳</span>
+              <div>
+                <span class="demo-preset-title">6. India (Mumbai, Maharashtra)</span>
+                <span class="demo-preset-desc">UrbanShine Deep Cleaners • INR (₹) • Bandra, Andheri, BKC &amp; Powai</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         18. FLOATING WHATSAPP BUTTON
+         ===================================================================== -->
+    <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-fab data-hidden" id="floating-whatsapp-btn" aria-label="Chat with business on WhatsApp">
+      <span class="whatsapp-tooltip">Chat with us</span>
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.07-.1-.23-.17-.48-.29"/>
+      </svg>
+    </a>
+
+    <!-- Core Dynamic Data Script (Relative path for static subdirectories) -->
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

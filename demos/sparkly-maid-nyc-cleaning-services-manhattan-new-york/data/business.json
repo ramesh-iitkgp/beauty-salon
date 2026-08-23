@@ -1,0 +1,154 @@
+{
+    "business_name": "Sparkly Maid Nyc Cleaning Services",
+    "source_business_name": "Sparkly Maid Nyc Cleaning Services",
+    "tagline": "Award-Winning Residential, Deep & Move-Out Cleaning Specialists",
+    "category": "Residential & Commercial Cleaning",
+    "phone": "16465853515",
+    "whatsapp": "",
+    "email": "",
+    "website_url": "https://www.sparklymaidnyc.com/",
+    "address": "\n447 Broadway 2nd floor #523, New York, NY 10013, United States",
+    "city": "Manhattan New York",
+    "state": "",
+    "country": "USA",
+    "currency_symbol": "$",
+    "currency_code": "USD",
+    "opening_hours": "",
+    "rating": "3",
+    "review_count": "461",
+    "google_maps_url": "https://www.google.com/maps/place/Sparkly+Maid+NYC+Cleaning+Services/data=!4m7!3m6!1s0x6121a65d8ce9c2e7:0xea8b337093475651!8m2!3d40.7206058!4d-74.0014893!16s%2Fg%2F11wjfq07y0!19sChIJ58LpjF2mIWERUVZHk3Azi-o?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1",
+    "logo_url": "",
+    "hero_image": "",
+    "service_areas": [
+        "Manhattan New York"
+    ],
+    "social": {
+        "instagram": "https://www.instagram.com/sparklymaid.nyc/",
+        "facebook": "",
+        "tiktok": ""
+    },
+    "before_after_pairs": [
+        {
+            "id": "kitchen",
+            "badge": "Kitchen Restoration",
+            "title": "Kitchen Degreasing & Stovetop Restoration",
+            "description": "Removal of heavy grease splatter, burnt stovetop carbon, stained backsplash tile, and messy clutter.",
+            "before": "./assets/kitchen_before.jpg",
+            "after": "./assets/kitchen_after.jpg",
+            "before_stats": "Heavy grease, clutter & burnt spills",
+            "after_stats": "100% Degreased & showroom shine"
+        },
+        {
+            "id": "bathroom",
+            "badge": "Bathroom Descaling",
+            "title": "Bathroom Limescale & Tile Grout Descaling",
+            "description": "Deep chemical-free acid descaling of stubborn limescale, soap scum, dull chrome fixtures, and discolored grout.",
+            "before": "./assets/bathroom_before.jpg",
+            "after": "./assets/bathroom_after.jpg",
+            "before_stats": "Stubborn limescale, scum & dull tiles",
+            "after_stats": "Mirror polished & deep sanitized"
+        },
+        {
+            "id": "living",
+            "badge": "Floor & Room Polish",
+            "title": "Living Space Declutter & Hardwood Polish",
+            "description": "Complete dust extraction, hardwood floor rejuvenation, carpet vacuuming, streak removal, and tidy organization.",
+            "before": "./assets/living_before.jpg",
+            "after": "./assets/living_after.jpg",
+            "before_stats": "Dust, scuffs & unorganized furniture",
+            "after_stats": "Pristine, gleaming & fresh atmosphere"
+        },
+        {
+            "id": "appliance",
+            "badge": "Oven & Appliance Grime",
+            "title": "Oven & Appliance Carbon Grime Extraction",
+            "description": "Intensive degreasing and polishing of baked-on food residue, oven door glass, and racks to showroom condition.",
+            "before": "./assets/oven_before.jpg",
+            "after": "./assets/oven_after.jpg",
+            "before_stats": "Baked carbon & oily grease layers",
+            "after_stats": "Streak-free crystal clear glass"
+        }
+    ],
+    "services": [
+        {
+            "name": "Regular Home Cleaning",
+            "badge": "Popular Housekeeping",
+            "price_from": "£22/hr",
+            "description": "Consistent weekly or bi-weekly housekeeping tailored to keep your living spaces continuously immaculate and fresh.",
+            "image": "./assets/service_regular.jpg",
+            "features": [
+                "Dusting & vacuuming all rooms",
+                "Kitchen counters, sink & stovetop scrub",
+                "Complete bathroom sanitization",
+                "Bed making & linen changing"
+            ]
+        },
+        {
+            "name": "Intensive Deep Cleaning",
+            "badge": "Top Detail Scrub",
+            "price_from": "£180",
+            "description": "Top-to-bottom comprehensive deep scrub reaching behind appliances, skirting boards, grout lines, and heavy buildup.",
+            "image": "./assets/service_deep.jpg",
+            "features": [
+                "Inside oven, microwave & range hood degreasing",
+                "Deep tile & grout limescale descaling",
+                "Baseboards, doors & window frame wiping",
+                "Under & behind reachable furniture"
+            ]
+        },
+        {
+            "name": "End of Tenancy / Move-Out Cleaning",
+            "badge": "100% Deposit Guarantee",
+            "price_from": "£220",
+            "description": "Inspection-ready handover deep clean strictly compliant with estate agent and landlord inventory checklists.",
+            "image": "./assets/service_move_out.jpg",
+            "features": [
+                "48-hour free re-clean guarantee",
+                "Deep cupboard & wardrobe interior wash",
+                "Appliance internal degreasing included",
+                "Official invoice for estate agent handover"
+            ]
+        },
+        {
+            "name": "Carpet & Upholstery Steam Cleaning",
+            "badge": "Stain & Allergen Removal",
+            "price_from": "£65",
+            "description": "High-temperature hot water extraction extracting deep ground-in dirt, pet dander, stubborn stains, and bacteria.",
+            "image": "./assets/service_carpet.jpg",
+            "features": [
+                "Deep hot-water steam injection",
+                "Pet odor & stain neutralizing enzyme",
+                "Quick drying time (2-4 hours)",
+                "Safe for delicate fibers & wool rugs"
+            ]
+        },
+        {
+            "name": "Post-Renovation & Builders Cleaning",
+            "badge": "Fine Dust Elimination",
+            "price_from": "£250",
+            "description": "Specialized multi-stage fine dust extraction, paint splatter removal, and polishing following construction works.",
+            "image": "./assets/living_after.jpg",
+            "features": [
+                "HEPA filtration fine dust extraction",
+                "Paint, silicone & adhesive residue removal",
+                "Window glass & track detailed polishing",
+                "Ready for immediate furnishing"
+            ]
+        },
+        {
+            "name": "Commercial & Office Cleaning",
+            "badge": "Discreet & Professional",
+            "price_from": "£25/hr",
+            "description": "Discreet, reliable janitorial maintenance creating clean, hygienic, and productive workplace environments.",
+            "image": "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=800&q=80",
+            "features": [
+                "Workstation & phone sanitization",
+                "Kitchenette, breakroom & washroom restock",
+                "After-hours or weekend keyholder service",
+                "Eco-friendly commercial supplies"
+            ]
+        }
+    ],
+    "business_images": [],
+    "reviews": []
+}

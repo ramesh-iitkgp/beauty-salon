@@ -1,0 +1,6 @@
+{
+  "name": "Cleaning Company Website Template",
+  "description": "A production-ready, reusable, modern website template for residential and commercial cleaning businesses with dynamic JSON data rendering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
