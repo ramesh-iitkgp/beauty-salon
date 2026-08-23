@@ -1,8 +1,8 @@
 {
     "business_name": "Decadence Salon",
     "source_business_name": "Decadence Salon",
-    "tagline": "Professional Cleaning Services in Central London",
-    "category": "Home Cleaning",
+    "tagline": "Award-Winning Luxury Hair Styling, Color & Skincare Lounge in Central London",
+    "category": "Beauty Salon & Spa",
     "phone": "442076361328",
     "whatsapp": "",
     "email": "booking@decadencesalon.co.uk",
@@ -71,18 +71,18 @@
     ],
     "services": [
         {
-            "name": "Regular Home Cleaning",
-            "description": "",
+            "name": "Signature Precision Haircut & Blowout",
+            "description": "Bespoke consultation, revitalizing shampoo, tailored dry or wet cut, followed by our signature bouncy voluminous blowout.",
             "image": ""
         },
         {
-            "name": "Deep Cleaning",
-            "description": "",
+            "name": "Artisan Balayage & Color Gloss",
+            "description": "Hand-painted dimensional lightening tailored to your natural movement, sealed with a customized acidic toner and gloss.",
             "image": ""
         },
         {
-            "name": "Move-In / Move-Out Cleaning",
-            "description": "",
+            "name": "Hydra-Infusion Glow Facial",
+            "description": "Multi-step medical-grade hydra-dermabrasion, ultrasonic pore extraction, botanical peel, and collagen LED rejuvenation.",
             "image": ""
         }
     ],

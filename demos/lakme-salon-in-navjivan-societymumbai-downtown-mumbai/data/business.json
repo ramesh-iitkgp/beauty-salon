@@ -1,8 +1,8 @@
 {
     "business_name": "Lakme Salon In Navjivan Societymumbai",
     "source_business_name": "Lakme Salon In Navjivan Societymumbai",
-    "tagline": "Professional Cleaning Services in Downtown Mumbai",
-    "category": "Home Cleaning",
+    "tagline": "Award-Winning Luxury Hair Styling, Color & Skincare Lounge in Downtown Mumbai",
+    "category": "Beauty Salon & Spa",
     "phone": "912223094170",
     "whatsapp": "",
     "email": "",
@@ -71,18 +71,18 @@
     ],
     "services": [
         {
-            "name": "Regular Home Cleaning",
-            "description": "",
+            "name": "Signature Precision Haircut & Blowout",
+            "description": "Bespoke consultation, revitalizing shampoo, tailored dry or wet cut, followed by our signature bouncy voluminous blowout.",
             "image": ""
         },
         {
-            "name": "Deep Cleaning",
-            "description": "",
+            "name": "Artisan Balayage & Color Gloss",
+            "description": "Hand-painted dimensional lightening tailored to your natural movement, sealed with a customized acidic toner and gloss.",
             "image": ""
         },
         {
-            "name": "Move-In / Move-Out Cleaning",
-            "description": "",
+            "name": "Hydra-Infusion Glow Facial",
+            "description": "Multi-step medical-grade hydra-dermabrasion, ultrasonic pore extraction, botanical peel, and collagen LED rejuvenation.",
             "image": ""
         }
     ],
