@@ -1,26 +1,56 @@
 /**
- * Luxe Glow Salon & Spa — Frontend Automation & Dynamic Script
- * Connects to data/business.json and powers interactive treatment booking.
+ * Luxe Glow / Beauty Salon Template Script
+ * Connects to data/business.json, calculates live estimates, and formats 1-click WhatsApp booking.
  */
 
-// Global state
+// Global State
 let salonData = null;
 let currentCurrency = "£";
 
-// Treatment base prices (in GBP baseline, scaled by currency)
-const TREATMENT_PRICES = {
-  cut: { name: "Signature Haircut & Blowout", basePrice: 65, duration: "60 mins" },
-  balayage: { name: "Artisan Balayage & Color Gloss", basePrice: 160, duration: "180 mins" },
-  facial: { name: "Hydra-Infusion Radiance Facial", basePrice: 95, duration: "75 mins" },
-  biab: { name: "BIAB Russian Structured Gel Manicure", basePrice: 55, duration: "60 mins" },
-  massage: { name: "Aromatherapy Deep Relax Massage", basePrice: 85, duration: "60 mins" },
-  bridal: { name: "Couture Bridal Hair & HD Makeup", basePrice: 220, duration: "150 mins" }
+// Base prices (scaled by currency config)
+const BASE_TREATMENTS = {
+  balayage: {
+    name: "Artisan Balayage & Color Gloss",
+    price: 160,
+    duration: "180 Mins",
+    details: "Dimensional blonding + toner gloss"
+  },
+  cut: {
+    name: "Precision Cut & Blowout",
+    price: 65,
+    duration: "60 Mins",
+    details: "Scalp wash, custom cut & volume style"
+  },
+  facial: {
+    name: "Hydra-Glow Radiance Facial",
+    price: 95,
+    duration: "75 Mins",
+    details: "Hydro-vacuum pore detox & peptide infusion"
+  },
+  biab: {
+    name: "BIAB Russian Gel Manicure",
+    price: 55,
+    duration: "60 Mins",
+    details: "Dry e-file prep & apex nail overlay"
+  },
+  massage: {
+    name: "Aromatherapy Spa Massage",
+    price: 85,
+    duration: "60 Mins",
+    details: "Warm botanical oils & tension relief"
+  },
+  bridal: {
+    name: "Couture Bridal Hair & Makeup",
+    price: 220,
+    duration: "150 Mins",
+    details: "Trial-tested styling & 24hr HD airbrush glam"
+  }
 };
 
-const ADDON_PRICES = {
-  olaplex: { name: "Olaplex Bond Rebuilder", price: 25 },
-  collagen_mask: { name: "Collagen Eye & Lip Plump Mask", price: 20 },
-  nail_art: { name: "Hand-Painted Chrome / French Art", price: 18 },
+const BASE_ADDONS = {
+  olaplex: { name: "Olaplex & K18 Bond Therapy", price: 25 },
+  collagen_mask: { name: "Collagen Eye & Lip Plump", price: 20 },
+  nail_art: { name: "Hand-Painted Chrome Nail Art", price: 18 },
   scalp_scrub: { name: "Detox Botanical Scalp Scrub", price: 22 }
 };
 
@@ -30,19 +60,21 @@ let selectedAddons = new Set(["olaplex"]);
 document.addEventListener("DOMContentLoaded", async () => {
   await loadSalonData();
   setupCalculator();
-  setupSmoothScroll();
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
 });
 
 async function loadSalonData() {
   try {
     const res = await fetch("./data/business.json");
-    if (!res.ok) throw new Error("Could not load business.json");
+    if (!res.ok) throw new Error("Could not load data/business.json");
     salonData = await res.json();
     currentCurrency = salonData.currency_symbol || "£";
     applyDataToDOM(salonData);
   } catch (err) {
-    console.warn("Using fallback local salon data:", err);
-    updateCalculatedTotal();
+    console.warn("Using fallback salon state:", err);
+    updateCalculatorDisplay();
   }
 }
 
@@ -50,190 +82,212 @@ function applyDataToDOM(data) {
   if (!data) return;
 
   // Text contents
-  document.querySelectorAll("[data-business-name]").forEach(el => el.textContent = data.business_name || "Luxe Glow Salon");
+  const bName = data.business_name || "Luxe Glow Salon";
+  document.title = `${bName} | Luxury Hair, Color & Beauty Lounge`;
+  document.querySelectorAll("[data-business-name]").forEach(el => el.textContent = bName);
   document.querySelectorAll("[data-tagline]").forEach(el => el.textContent = data.tagline || "");
   document.querySelectorAll("[data-address]").forEach(el => el.textContent = data.address || "");
-  document.querySelectorAll("[data-city]").forEach(el => el.textContent = data.city || "");
-  document.querySelectorAll("[data-phone]").forEach(el => {
-    el.textContent = data.phone || "";
-    if (el.tagName === "A") el.href = `tel:${data.phone}`;
-  });
-  document.querySelectorAll("[data-rating]").forEach(el => el.textContent = data.rating || "4.9");
-  document.querySelectorAll("[data-reviews-count]").forEach(el => el.textContent = data.review_count || "180+");
+  document.querySelectorAll("[data-city]").forEach(el => el.textContent = data.city || "London");
   document.querySelectorAll("[data-hours]").forEach(el => el.textContent = data.opening_hours || "");
+  
+  if (data.phone) {
+    document.querySelectorAll("[data-phone]").forEach(el => el.href = `tel:${data.phone}`);
+    document.querySelectorAll("[data-phone-display]").forEach(el => el.textContent = data.phone);
+  }
 
-  // WhatsApp links
-  const waNumber = (data.whatsapp || data.phone || "").replace(/\D/g, "");
-  document.querySelectorAll("[data-whatsapp-link]").forEach(el => {
-    if (waNumber) {
-      el.href = `https://wa.me/${waNumber}?text=Hi%20${encodeURIComponent(data.business_name || "Luxe Glow")},%20I'd%20like%20to%20book%20an%20appointment!`;
-    }
-  });
+  if (data.email) {
+    document.querySelectorAll("[data-email]").forEach(el => el.href = `mailto:${data.email}`);
+    document.querySelectorAll("[data-email-display]").forEach(el => el.textContent = data.email);
+  }
 
-  // Services rendering if placeholder exists
-  renderServicesList(data.services);
-  renderBeforeAfter(data.before_after_pairs);
+  if (data.hero_image) {
+    const heroImg = document.getElementById("hero-bg-img");
+    if (heroImg) heroImg.src = data.hero_image;
+  }
+
+  // Social links
+  if (data.social) {
+    const ig = document.querySelector("[data-instagram]");
+    if (ig && data.social.instagram) ig.href = data.social.instagram;
+    const fb = document.querySelector("[data-facebook]");
+    if (fb && data.social.facebook) fb.href = data.social.facebook;
+  }
+
+  // Hero badges
+  const heroCuts = document.getElementById("hero-cuts-price");
+  if (heroCuts) heroCuts.textContent = `${currentCurrency}45–${currentCurrency}65`;
+  const heroBalayage = document.getElementById("hero-balayage-badge");
+  if (heroBalayage) heroBalayage.textContent = `Balayage ${currentCurrency}160`;
+  const heroFacial = document.getElementById("hero-facial-badge");
+  if (heroFacial) heroFacial.textContent = `Facial ${currentCurrency}95+`;
+  const heroNails = document.getElementById("hero-nails-badge");
+  if (heroNails) heroNails.textContent = `BIAB Nails ${currentCurrency}55`;
+  const bentoCut = document.getElementById("bento-cut-price");
+  if (bentoCut) bentoCut.textContent = `${currentCurrency}45`;
+
+  // Render Transformations & Reviews
+  renderTransformations(data.before_after_pairs);
   renderReviews(data.reviews);
 
-  updateCalculatedTotal();
+  updateCalculatorDisplay();
 }
 
-function renderServicesList(services) {
-  const container = document.getElementById("services-grid");
-  if (!container || !services || !services.length) return;
-
-  container.innerHTML = services.map(svc => `
-    <div class="service-card">
-      <img class="service-card-img" src="${svc.image || 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80'}" alt="${svc.name}">
-      <div class="service-card-body">
-        <div class="service-card-title-row">
-          <h3>${svc.name}</h3>
-          <span class="price">${svc.price_from}</span>
-        </div>
-        <p style="font-size:0.88rem; color:var(--color-text-muted);">${svc.description}</p>
-        <ul class="service-features-list">
-          ${(svc.features || []).map(f => `<li>${f}</li>`).join('')}
-        </ul>
-        <button onclick="selectServiceAndScroll('${getServiceKeyByName(svc.name)}')" class="btn btn-outline btn-sm" style="margin-top:auto; width:100%;">
-          Book This Treatment
-        </button>
-      </div>
-    </div>
-  `).join('');
-}
-
-function getServiceKeyByName(name) {
-  const lower = name.toLowerCase();
-  if (lower.includes("cut") || lower.includes("blowout")) return "cut";
-  if (lower.includes("balayage") || lower.includes("color")) return "balayage";
-  if (lower.includes("facial") || lower.includes("skin")) return "facial";
-  if (lower.includes("gel") || lower.includes("nail") || lower.includes("biab")) return "biab";
-  if (lower.includes("massage") || lower.includes("spa")) return "massage";
-  if (lower.includes("bridal") || lower.includes("makeup")) return "bridal";
-  return "balayage";
-}
-
-function renderBeforeAfter(pairs) {
-  const container = document.getElementById("transformations-grid");
+function renderTransformations(pairs) {
+  const container = document.getElementById("transformations-container");
   if (!container || !pairs || !pairs.length) return;
 
   container.innerHTML = pairs.map(p => `
-    <div class="gallery-card">
-      <div class="before-after-img-wrap">
-        <span class="img-tag before">Before</span>
-        <img src="${p.before}" alt="Before ${p.title}">
-        <span class="img-tag after">After</span>
-        <img src="${p.after}" alt="After ${p.title}">
+    <div class="bg-white rounded-[2.5rem] p-4 border border-border shadow-md flex flex-col justify-between hover:shadow-xl transition-all group">
+      <div class="rounded-[2rem] overflow-hidden relative shadow-inner bg-[#1B120D] mb-4">
+        <!-- Dual Split Container -->
+        <div class="grid grid-cols-2 aspect-[4/3] relative">
+          <div class="relative overflow-hidden border-r border-white/20">
+            <img src="${p.before}" alt="Before ${p.title}" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-black/75 text-white backdrop-blur px-2.5 py-1 rounded-full text-[10px] font-semibold font-sans uppercase tracking-wider">
+              Before
+            </span>
+          </div>
+          <div class="relative overflow-hidden">
+            <img src="${p.after}" alt="After ${p.title}" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 bg-primary text-white backdrop-blur px-2.5 py-1 rounded-full text-[10px] font-semibold font-sans uppercase tracking-wider">
+              After
+            </span>
+          </div>
+        </div>
       </div>
-      <div class="gallery-content">
-        <span class="badge-luxury" style="margin-bottom:8px; font-size:0.72rem;">${p.badge || 'Transformation'}</span>
-        <h4>${p.title}</h4>
-        <p>${p.description}</p>
+
+      <div class="px-2 pb-2 text-left">
+        <span class="inline-block text-[10px] uppercase tracking-widest text-primary font-semibold font-sans mb-1.5 bg-secondary px-2.5 py-0.5 rounded-full">
+          ${p.badge || 'Transformation'}
+        </span>
+        <h4 class="text-2xl font-newsreader font-light leading-snug mb-2 text-foreground">
+          ${p.title}
+        </h4>
+        <p class="text-xs text-foreground/70 font-sans leading-relaxed mb-4">
+          ${p.description}
+        </p>
+
+        <!-- Before & After Comparison Pills -->
+        <div class="space-y-1.5 pt-3 border-t border-border/80 text-[11px] font-sans">
+          <div class="flex items-center gap-1.5 text-foreground/60">
+            <span class="size-1.5 rounded-full bg-red-400"></span>
+            <strong>Before:</strong> <span>${p.before_stats || 'Faded tone & dry ends'}</span>
+          </div>
+          <div class="flex items-center gap-1.5 text-foreground/80 font-medium">
+            <span class="size-1.5 rounded-full bg-emerald-500"></span>
+            <strong class="text-primary">After:</strong> <span>${p.after_stats || 'Luminous salon glow'}</span>
+          </div>
+        </div>
       </div>
     </div>
   `).join('');
 }
 
 function renderReviews(reviews) {
-  const container = document.getElementById("reviews-grid");
+  const container = document.getElementById("reviews-container");
   if (!container || !reviews || !reviews.length) return;
 
   container.innerHTML = reviews.map(r => `
-    <div class="review-card">
-      <div class="review-header">
-        <span class="reviewer-name">${r.name}</span>
-        <span class="rating-stars">${"★".repeat(r.rating || 5)}</span>
+    <article class="bg-white rounded-[2rem] p-8 shadow-sm border border-border flex flex-col justify-between min-h-[280px]">
+      <div>
+        <div class="flex text-amber-500 mb-4 text-sm">
+          ${"★".repeat(r.rating || 5)}
+        </div>
+        <p class="text-xl tracking-tight leading-snug font-newsreader font-light text-foreground mb-6">
+          "${r.comment}"
+        </p>
       </div>
-      <span class="review-service-tag">Treatment: ${r.service || 'Salon Service'}</span>
-      <p class="review-text">"${r.comment}"</p>
-    </div>
+      <div class="flex items-center justify-between pt-4 border-t border-border">
+        <div>
+          <p class="text-sm font-semibold font-sans text-foreground">${r.name}</p>
+          <p class="text-xs text-foreground/50 font-medium font-sans">${r.service || 'Salon Client'}</p>
+        </div>
+        <i data-lucide="quote" class="size-6 text-primary/30"></i>
+      </div>
+    </article>
   `).join('');
 }
 
-/* Calculator Logic */
+/* Calculator Setup & Updates */
 function setupCalculator() {
-  const serviceOptions = document.querySelectorAll(".service-option-card");
-  serviceOptions.forEach(opt => {
-    opt.addEventListener("click", () => {
-      serviceOptions.forEach(o => o.classList.remove("active"));
-      opt.classList.add("active");
-      selectedTreatment = opt.dataset.treatment;
-      updateCalculatedTotal();
+  const buttons = document.querySelectorAll(".treatment-btn");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => {
+        b.classList.remove("active", "border-2", "border-primary", "bg-secondary/30");
+        b.classList.add("border", "border-border", "bg-white");
+        const icon = b.querySelector(".check-icon");
+        if (icon) icon.classList.add("hidden");
+      });
+
+      btn.classList.add("active", "border-2", "border-primary", "bg-secondary/30");
+      btn.classList.remove("border-border", "bg-white");
+      const icon = btn.querySelector(".check-icon");
+      if (icon) icon.classList.remove("hidden");
+
+      selectedTreatment = btn.dataset.key;
+      updateCalculatorDisplay();
     });
   });
 
   const addonCheckboxes = document.querySelectorAll(".addon-checkbox");
   addonCheckboxes.forEach(cb => {
     cb.addEventListener("change", (e) => {
-      const addonKey = e.target.value;
+      const val = e.target.value;
       if (e.target.checked) {
-        selectedAddons.add(addonKey);
+        selectedAddons.add(val);
       } else {
-        selectedAddons.delete(addonKey);
+        selectedAddons.delete(val);
       }
-      updateCalculatedTotal();
+      updateCalculatorDisplay();
     });
   });
 }
 
-function selectServiceAndScroll(treatmentKey) {
-  const card = document.querySelector(`[data-treatment="${treatmentKey}"]`);
-  if (card) {
-    document.querySelectorAll(".service-option-card").forEach(o => o.classList.remove("active"));
-    card.classList.add("active");
-    selectedTreatment = treatmentKey;
-    updateCalculatedTotal();
-  }
-  const bookingSec = document.getElementById("booking-calculator");
-  if (bookingSec) {
-    bookingSec.scrollIntoView({ behavior: "smooth" });
-  }
-}
+function updateCalculatorDisplay() {
+  const t = BASE_TREATMENTS[selectedTreatment] || BASE_TREATMENTS.balayage;
+  let total = t.price;
 
-function updateCalculatedTotal() {
-  const treatment = TREATMENT_PRICES[selectedTreatment] || TREATMENT_PRICES.balayage;
-  let total = treatment.basePrice;
-
+  const activeAddonNames = [];
   selectedAddons.forEach(k => {
-    if (ADDON_PRICES[k]) {
-      total += ADDON_PRICES[k].price;
+    if (BASE_ADDONS[k]) {
+      total += BASE_ADDONS[k].price;
+      activeAddonNames.push(BASE_ADDONS[k].name);
     }
   });
 
-  const totalEl = document.getElementById("calc-total-price");
-  const treatmentNameEl = document.getElementById("calc-treatment-name");
-  const durationEl = document.getElementById("calc-duration");
+  const totalDisplay = document.getElementById("calc-total-display");
+  const durationDisplay = document.getElementById("calc-duration-display");
+  const summaryDetails = document.getElementById("calc-summary-details");
+  const waBtn = document.getElementById("calc-whatsapp-btn");
 
-  if (totalEl) totalEl.textContent = `${currentCurrency}${total}`;
-  if (treatmentNameEl) treatmentNameEl.textContent = treatment.name;
-  if (durationEl) durationEl.textContent = `Approx. Duration: ${treatment.duration}`;
+  if (totalDisplay) totalDisplay.textContent = `${currentCurrency}${total}`;
+  if (durationDisplay) durationDisplay.textContent = `(${t.duration})`;
+  if (summaryDetails) {
+    const addonsText = activeAddonNames.length ? ` + ${activeAddonNames.join(", ")}` : "";
+    summaryDetails.textContent = `${t.name}${addonsText}`;
+  }
 
-  // Update booking CTA link
-  const bookBtn = document.getElementById("confirm-booking-btn");
-  if (bookBtn && salonData) {
-    const businessName = salonData.business_name || "Luxe Glow Salon";
-    const waNumber = (salonData.whatsapp || salonData.phone || "").replace(/\D/g, "");
-    const addonNames = Array.from(selectedAddons).map(k => ADDON_PRICES[k]?.name).filter(Boolean);
-    const msg = `Hi ${businessName}! 👋 I'd like to book an appointment for:\n✦ ${treatment.name}\n${addonNames.length ? '✦ Add-ons: ' + addonNames.join(', ') + '\n' : ''}✦ Estimated Total: ${currentCurrency}${total}\n\nCould you let me know your available slots this week?`;
+  // Format WhatsApp Booking link
+  if (waBtn) {
+    const bName = salonData ? (salonData.business_name || "Luxe Glow Salon") : "Luxe Glow Salon";
+    const waNumber = (salonData ? (salonData.whatsapp || salonData.phone || "") : "").replace(/\D/g, "");
+    const msg = `Hi ${bName}! 👋 I'd like to reserve an appointment:\n✦ Treatment: ${t.name}\n${activeAddonNames.length ? '✦ Add-ons: ' + activeAddonNames.join(', ') + '\n' : ''}✦ Estimated Total: ${currentCurrency}${total}\n\nCould you let me know your available slots this week?`;
     
     if (waNumber) {
-      bookBtn.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
+      waBtn.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
     } else {
-      bookBtn.href = `mailto:${salonData.email || 'hello@luxeglowsalon.com'}?subject=Appointment%20Booking%20Request&body=${encodeURIComponent(msg)}`;
+      waBtn.href = `mailto:${salonData?.email || 'hello@luxeglowsalon.com'}?subject=Appointment%20Booking&body=${encodeURIComponent(msg)}`;
     }
   }
-}
 
-function setupSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+  // Update hero whatsapp link
+  const heroWa = document.querySelector("[data-whatsapp-link]");
+  if (heroWa && salonData) {
+    const waNumber = (salonData.whatsapp || salonData.phone || "").replace(/\D/g, "");
+    const bName = salonData.business_name || "Luxe Glow Salon";
+    if (waNumber) {
+      heroWa.href = `https://wa.me/${waNumber}?text=Hi%20${encodeURIComponent(bName)},%20I'd%20like%20to%20inquire%20about%20booking%20an%20appointment!`;
+    }
+  }
 }

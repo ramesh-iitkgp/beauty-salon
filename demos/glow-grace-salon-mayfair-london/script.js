@@ -1,5 +1,5 @@
 /**
- * Empire Owl / Beauty Salon Template Script
+ * Luxe Glow / Beauty Salon Template Script
  * Connects to data/business.json, calculates live estimates, and formats 1-click WhatsApp booking.
  */
 
@@ -13,44 +13,44 @@ const BASE_TREATMENTS = {
     name: "Artisan Balayage & Color Gloss",
     price: 160,
     duration: "180 Mins",
-    details: "Dimensional blonding + toner"
+    details: "Dimensional blonding + toner gloss"
   },
   cut: {
     name: "Precision Cut & Blowout",
     price: 65,
     duration: "60 Mins",
-    details: "Wash, custom cut & volume style"
+    details: "Scalp wash, custom cut & volume style"
   },
   facial: {
     name: "Hydra-Glow Radiance Facial",
     price: 95,
     duration: "75 Mins",
-    details: "Hydro-vacuum pore detox"
+    details: "Hydro-vacuum pore detox & peptide infusion"
   },
   biab: {
     name: "BIAB Russian Gel Manicure",
     price: 55,
     duration: "60 Mins",
-    details: "Dry e-file prep + apex overlay"
+    details: "Dry e-file prep & apex nail overlay"
   },
   massage: {
     name: "Aromatherapy Spa Massage",
     price: 85,
     duration: "60 Mins",
-    details: "Warm oil tension release"
+    details: "Warm botanical oils & tension relief"
   },
   bridal: {
-    name: "Couture Bridal Updo & Makeup",
+    name: "Couture Bridal Hair & Makeup",
     price: 220,
     duration: "150 Mins",
-    details: "24hr HD airbrush glam"
+    details: "Trial-tested styling & 24hr HD airbrush glam"
   }
 };
 
 const BASE_ADDONS = {
-  olaplex: { name: "Olaplex Bond Rebuilder", price: 25 },
+  olaplex: { name: "Olaplex & K18 Bond Therapy", price: 25 },
   collagen_mask: { name: "Collagen Eye & Lip Plump", price: 20 },
-  nail_art: { name: "Hand-Painted Chrome Art", price: 18 },
+  nail_art: { name: "Hand-Painted Chrome Nail Art", price: 18 },
   scalp_scrub: { name: "Detox Botanical Scalp Scrub", price: 22 }
 };
 
@@ -82,7 +82,8 @@ function applyDataToDOM(data) {
   if (!data) return;
 
   // Text contents
-  const bName = data.business_name || "Empire Owl Salon";
+  const bName = data.business_name || "Luxe Glow Salon";
+  document.title = `${bName} | Luxury Hair, Color & Beauty Lounge`;
   document.querySelectorAll("[data-business-name]").forEach(el => el.textContent = bName);
   document.querySelectorAll("[data-tagline]").forEach(el => el.textContent = data.tagline || "");
   document.querySelectorAll("[data-address]").forEach(el => el.textContent = data.address || "");
@@ -269,14 +270,14 @@ function updateCalculatorDisplay() {
 
   // Format WhatsApp Booking link
   if (waBtn) {
-    const bName = salonData ? salonData.business_name : "Empire Owl Salon";
+    const bName = salonData ? (salonData.business_name || "Luxe Glow Salon") : "Luxe Glow Salon";
     const waNumber = (salonData ? (salonData.whatsapp || salonData.phone || "") : "").replace(/\D/g, "");
     const msg = `Hi ${bName}! 👋 I'd like to reserve an appointment:\n✦ Treatment: ${t.name}\n${activeAddonNames.length ? '✦ Add-ons: ' + activeAddonNames.join(', ') + '\n' : ''}✦ Estimated Total: ${currentCurrency}${total}\n\nCould you let me know your available slots this week?`;
     
     if (waNumber) {
       waBtn.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
     } else {
-      waBtn.href = `mailto:${salonData?.email || 'hello@salon.com'}?subject=Appointment%20Booking&body=${encodeURIComponent(msg)}`;
+      waBtn.href = `mailto:${salonData?.email || 'hello@luxeglowsalon.com'}?subject=Appointment%20Booking&body=${encodeURIComponent(msg)}`;
     }
   }
 
@@ -284,7 +285,7 @@ function updateCalculatorDisplay() {
   const heroWa = document.querySelector("[data-whatsapp-link]");
   if (heroWa && salonData) {
     const waNumber = (salonData.whatsapp || salonData.phone || "").replace(/\D/g, "");
-    const bName = salonData.business_name || "Empire Owl Salon";
+    const bName = salonData.business_name || "Luxe Glow Salon";
     if (waNumber) {
       heroWa.href = `https://wa.me/${waNumber}?text=Hi%20${encodeURIComponent(bName)},%20I'd%20like%20to%20inquire%20about%20booking%20an%20appointment!`;
     }
