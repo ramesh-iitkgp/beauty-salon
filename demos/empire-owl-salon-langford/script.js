@@ -78,11 +78,49 @@ async function loadSalonData() {
   }
 }
 
+function cleanBusinessName(raw, city) {
+  if (!raw) return "Luxe Glow Salon";
+  let cleaned = String(raw).trim();
+
+  // Known location keywords
+  const locRegex = /(?:downtown abu dhabi|down town abu dhabi|north abu dhabi|south abu dhabi|abu dhabi|dubai|sharjah|ajman|uae|united arab emirates|central london|west london|east london|north london|south london|london|manchester|birmingham|downtown los angeles|west hollywood|hollywood|los angeles|la|downtown chicago|chicago|new york|manhattan|brooklyn|toronto|vancouver|sydney|melbourne|auckland|north auckland|south auckland|downtown auckland|mumbai|delhi|bangalore|houston|dallas|miami|uk|usa|australia|new zealand)/i;
+
+  // 1. Remove separator + location or generic category suffixes
+  cleaned = cleaned.replace(/\s*[-|–—,:]\s*(?:(?:beauty salon|hair salon|salon|spa|cleaning|services)\s+)?(?:downtown\s+|down town\s+|central\s+|north\s+|south\s+|east\s+|west\s+)?(?:abu dhabi|dubai|sharjah|ajman|uae|london|manchester|birmingham|los angeles|new york|chicago|houston|dallas|miami|toronto|sydney|melbourne|auckland|mumbai|delhi|bangalore|uk|usa|australia|new zealand)\s*$/i, '');
+  cleaned = cleaned.replace(/\s*[-|–—,:]\s*(?:abu dhabi|dubai|sharjah|ajman|uae|london|manchester|birmingham|los angeles|new york|chicago|houston|dallas|miami|toronto|sydney|melbourne|auckland|mumbai|delhi|bangalore)\s*$/i, '');
+
+  // 2. Remove trailing location name without separator
+  cleaned = cleaned.replace(/\s+(?:abu dhabi|dubai|sharjah|ajman|uae|london|manchester|birmingham|los angeles|new york|chicago|houston|dallas|miami|toronto|sydney|melbourne|auckland|mumbai|delhi|bangalore)\s*$/i, '');
+
+  // 3. Remove custom city if provided
+  if (city) {
+    const escapedCity = String(city).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    cleaned = cleaned.replace(new RegExp(`\\s*[-|–—,:]?\\s*${escapedCity}\\s*$`, 'i'), '');
+  }
+
+  // 4. Remove duplicate repetitive category after separator
+  cleaned = cleaned.replace(/\s*[-|–—,:]\s*(?:beauty salon|hair salon|nail salon|spa|cleaning services)\s*$/i, '');
+
+  // 5. Clean trailing punctuation
+  cleaned = cleaned.replace(/[\s\-|–—,:]+$/, '').trim();
+
+  // 6. Convert ALL-CAPS to Title Case
+  if (cleaned.length > 3 && cleaned === cleaned.toUpperCase()) {
+    cleaned = cleaned.toLowerCase().split(' ').map(w => {
+      if (['and', '&', 'of', 'in', 'by', 'the', 'for'].includes(w)) return w;
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    }).join(' ');
+    cleaned = cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+  }
+
+  return cleaned || raw;
+}
+
 function applyDataToDOM(data) {
   if (!data) return;
 
   // Text contents
-  const bName = data.business_name || "Luxe Glow Salon";
+  const bName = cleanBusinessName(data.business_name || "Luxe Glow Salon", data.city);
   document.title = `${bName} | Luxury Hair, Color & Beauty Lounge`;
   document.querySelectorAll("[data-business-name]").forEach(el => el.textContent = bName);
   document.querySelectorAll("[data-tagline]").forEach(el => el.textContent = data.tagline || "");
@@ -119,7 +157,7 @@ function applyDataToDOM(data) {
   const heroBalayage = document.getElementById("hero-balayage-badge");
   if (heroBalayage) heroBalayage.textContent = `Balayage ${currentCurrency}160`;
   const heroFacial = document.getElementById("hero-facial-badge");
-  if (heroFacial) heroFacial.textContent = `Facial ${currentCurrency}95+`;
+  if (heroFacial) heroFacial.textContent = `Hydra Facial ${currentCurrency}95+`;
   const heroNails = document.getElementById("hero-nails-badge");
   if (heroNails) heroNails.textContent = `BIAB Nails ${currentCurrency}55`;
   const bentoCut = document.getElementById("bento-cut-price");
@@ -270,7 +308,8 @@ function updateCalculatorDisplay() {
 
   // Format WhatsApp Booking link
   if (waBtn) {
-    const bName = salonData ? (salonData.business_name || "Luxe Glow Salon") : "Luxe Glow Salon";
+    const rawName = salonData ? (salonData.business_name || "Luxe Glow Salon") : "Luxe Glow Salon";
+    const bName = cleanBusinessName(rawName, salonData?.city);
     const waNumber = (salonData ? (salonData.whatsapp || salonData.phone || "") : "").replace(/\D/g, "");
     const msg = `Hi ${bName}! 👋 I'd like to reserve an appointment:\n✦ Treatment: ${t.name}\n${activeAddonNames.length ? '✦ Add-ons: ' + activeAddonNames.join(', ') + '\n' : ''}✦ Estimated Total: ${currentCurrency}${total}\n\nCould you let me know your available slots this week?`;
     
@@ -285,7 +324,8 @@ function updateCalculatorDisplay() {
   const heroWa = document.querySelector("[data-whatsapp-link]");
   if (heroWa && salonData) {
     const waNumber = (salonData.whatsapp || salonData.phone || "").replace(/\D/g, "");
-    const bName = salonData.business_name || "Luxe Glow Salon";
+    const rawName = salonData.business_name || "Luxe Glow Salon";
+    const bName = cleanBusinessName(rawName, salonData?.city);
     if (waNumber) {
       heroWa.href = `https://wa.me/${waNumber}?text=Hi%20${encodeURIComponent(bName)},%20I'd%20like%20to%20inquire%20about%20booking%20an%20appointment!`;
     }
