@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base href="/beauty-salon/demos/sola-salons-lincoln-park-chicago/">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luxe Glow Salon | Luxury Hair, Color &amp; Beauty Lounge</title>
@@ -42,6 +40,16 @@
   </script>
 
   <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'Inter', sans-serif;
       background-color: #FAF6F0;
@@ -71,20 +79,20 @@
 <body class="antialiased selection:bg-primary selection:text-white">
 
   <!-- Navigation Header -->
-  <nav class="fixed top-0 w-full z-50 bg-[#FAF6F0]/95 backdrop-blur-md border-b border-[#E8DCCF]/80">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+  <nav class="fixed top-0 inset-x-0 w-full z-50 bg-[#FAF6F0]/95 backdrop-blur-md border-b border-[#E8DCCF]/80">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-6">
       
-      <!-- Brand Logo / Business Name (Isolated & Prominent) -->
-      <a href="#" class="flex items-center gap-2.5 bg-white/80 border border-[#E8DCCF] px-4 py-2 rounded-full shadow-sm hover:border-primary transition-all shrink-0">
-        <span class="flex items-center justify-center bg-primary text-white rounded-full size-7 shadow-sm">
-          <i data-lucide="sparkles" class="size-4"></i>
+      <!-- Brand Logo / Business Name (Isolated & Prominent, Truncated on Mobile to prevent overflow) -->
+      <a href="#" class="flex items-center gap-2 bg-white/80 border border-[#E8DCCF] px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm hover:border-primary transition-all min-w-0 max-w-[65vw] sm:max-w-[360px] md:max-w-none shrink">
+        <span class="flex items-center justify-center bg-primary text-white rounded-full size-6 sm:size-7 shadow-sm shrink-0">
+          <i data-lucide="sparkles" class="size-3.5 sm:size-4"></i>
         </span>
-        <span class="text-xl md:text-2xl tracking-tight font-newsreader font-normal text-foreground whitespace-nowrap" data-business-name>
+        <span class="text-sm sm:text-lg md:text-2xl tracking-tight font-newsreader font-normal text-foreground truncate block" data-business-name>
           Luxe Glow Salon
         </span>
       </a>
 
-      <!-- Nav Links (Center) -->
+      <!-- Nav Links (Center - Desktop) -->
       <div class="hidden lg:flex items-center space-x-7 text-sm font-normal text-foreground/80">
         <a href="#" class="text-primary font-medium hover:text-primary-dark transition-colors font-sans">
           Home
@@ -104,14 +112,14 @@
       </div>
 
       <!-- Action & Phone (Right) -->
-      <div class="flex items-center gap-3 shrink-0">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <a href="tel:" data-phone class="hidden sm:flex items-center gap-1.5 text-xs text-foreground/70 hover:text-primary transition-colors font-sans font-medium">
           <i data-lucide="phone" class="size-3.5 text-primary"></i>
           <span data-phone-display>+44 20 7946 0888</span>
         </a>
-        <a href="#calculator" class="flex items-center gap-2 bg-secondary text-foreground px-5 py-2.5 rounded-full text-sm font-medium hover:bg-secondary/80 transition-colors font-sans shadow-sm border border-border">
-          <span class="flex items-center justify-center bg-white rounded-full size-6 shadow-sm text-primary">
-            <i data-lucide="calendar" class="size-3.5"></i>
+        <a href="#calculator" class="flex items-center gap-1.5 sm:gap-2 bg-secondary text-foreground px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium hover:bg-secondary/80 transition-colors font-sans shadow-sm border border-border">
+          <span class="flex items-center justify-center bg-white rounded-full size-5 sm:size-6 shadow-sm text-primary">
+            <i data-lucide="calendar" class="size-3 sm:size-3.5"></i>
           </span>
           <span class="hidden md:inline">Book Appointment</span>
           <span class="md:hidden">Book</span>
@@ -121,9 +129,9 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="pt-28 pb-16 px-4 md:px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="relative rounded-[2.5rem] overflow-hidden bg-[#1B120D] min-h-[640px] md:min-h-[700px] flex flex-col items-center justify-center px-6 text-center text-white shadow-2xl shadow-primary/10 border border-white/10">
+  <section class="pt-20 sm:pt-28 pb-12 sm:pb-16 px-3 sm:px-6 w-full max-w-full overflow-hidden">
+    <div class="max-w-7xl mx-auto w-full">
+      <div class="relative rounded-[1.8rem] sm:rounded-[2.5rem] overflow-hidden bg-[#1B120D] min-h-[520px] sm:min-h-[640px] md:min-h-[700px] flex flex-col items-center justify-center px-4 sm:px-6 text-center text-white shadow-2xl shadow-primary/10 border border-white/10">
         <!-- Background Hero Image -->
         <img id="hero-bg-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=80" alt="Salon styling session" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity">
 
@@ -131,31 +139,32 @@
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.22),transparent_30%),radial-gradient(circle_at_80%_70%,rgba(152,106,62,0.5),transparent_35%),linear-gradient(to_bottom,rgba(0,0,0,0.25),rgba(0,0,0,0.75))] pointer-events-none"></div>
 
         <!-- Content -->
-        <div class="relative z-10 max-w-3xl flex flex-col items-center pt-8 pb-16">
+        <div class="relative z-10 max-w-3xl flex flex-col items-center pt-6 sm:pt-8 pb-10 sm:pb-16 w-full">
           
           <!-- Highlighted Business Badge -->
-          <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/15 backdrop-blur-xl border border-white/25 text-xs uppercase tracking-widest text-white mb-6 font-sans shadow-lg">
-            <i data-lucide="sparkles" class="size-3.5 text-amber-300"></i>
-            <span class="font-semibold" data-business-name>Luxe Glow Salon</span> • Luxury Hair &amp; Aesthetic Sanctuary
+          <div class="inline-flex items-center gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-white/15 backdrop-blur-xl border border-white/25 text-[11px] sm:text-xs uppercase tracking-wider text-white mb-5 sm:mb-6 font-sans shadow-lg max-w-full text-center flex-wrap justify-center">
+            <i data-lucide="sparkles" class="size-3.5 text-amber-300 shrink-0"></i>
+            <span class="font-semibold" data-business-name>Luxe Glow Salon</span>
+            <span class="hidden sm:inline">• Luxury Hair Sanctuary</span>
           </div>
 
-          <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.04] mb-6 max-w-4xl tracking-tight font-newsreader font-light">
+          <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-[5.2rem] leading-[1.08] mb-4 sm:mb-6 max-w-4xl tracking-tight font-newsreader font-light">
             Bespoke hair artistry, luminous color &amp; radiant beauty care
           </h1>
           
-          <p class="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl font-newsreader font-light leading-relaxed mb-8" data-tagline>
+          <p class="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl font-newsreader font-light leading-relaxed mb-6 sm:mb-8 px-2" data-tagline>
             A premier boutique salon in <span data-city>London</span>, specializing in dimensional balayage blonding, precision haircutting, medical-grade hydra skincare, and tailored 1-on-1 beauty rituals.
           </p>
 
-          <div class="flex flex-wrap gap-4 items-center justify-center">
-            <a href="#calculator" class="flex gap-2 hover:bg-white/20 transition-all text-sm font-medium text-white bg-white/10 border-white/20 border rounded-full px-6 py-3.5 backdrop-blur-md items-center font-sans shadow-lg">
-              <span class="flex items-center justify-center bg-white text-black rounded-full size-6">
-                <i data-lucide="arrow-right" class="size-3.5"></i>
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center w-full max-w-md sm:max-w-none">
+            <a href="#calculator" class="w-full sm:w-auto flex gap-2 justify-center hover:bg-white/20 transition-all text-xs sm:text-sm font-medium text-white bg-white/10 border-white/20 border rounded-full px-5 sm:px-6 py-3 sm:py-3.5 backdrop-blur-md items-center font-sans shadow-lg">
+              <span class="flex items-center justify-center bg-white text-black rounded-full size-5 sm:size-6 shrink-0">
+                <i data-lucide="arrow-right" class="size-3 sm:size-3.5"></i>
               </span>
               Estimate &amp; Book Appointment
             </a>
-            <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-[#25D366] text-white px-6 py-3.5 rounded-full text-sm font-medium hover:bg-[#1EBE5D] transition-all font-sans shadow-lg">
-              <i data-lucide="message-circle" class="size-4"></i>
+            <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-medium hover:bg-[#1EBE5D] transition-all font-sans shadow-lg">
+              <i data-lucide="message-circle" class="size-4 shrink-0"></i>
               Chat on WhatsApp
             </a>
           </div>
