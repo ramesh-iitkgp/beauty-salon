@@ -346,7 +346,16 @@ function setupTabNavigation() {
         tab.className =
           "section-tab active inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-sans transition-all bg-primary text-white shadow-sm";
         try {
-          tab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+          const container = tab.closest(".overflow-x-auto");
+          if (container) {
+            const tabLeft = tab.offsetLeft;
+            const tabWidth = tab.offsetWidth;
+            const cWidth = container.offsetWidth;
+            container.scrollTo({
+              left: tabLeft - (cWidth / 2) + (tabWidth / 2),
+              behavior: "smooth"
+            });
+          }
         } catch (_) {}
       } else {
         tab.className =
