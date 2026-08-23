@@ -126,10 +126,40 @@
         </a>
       </div>
     </div>
+
+    <!-- Section Switcher Tabs Bar (Option A: Tabbed App Interface) -->
+    <div class="border-t border-[#E8DCCF]/60 bg-[#FAF6F0]/98 py-2 px-3 sm:px-6 overflow-x-auto custom-scrollbar">
+      <div class="max-w-7xl mx-auto flex items-center gap-2 sm:gap-3 min-w-max">
+        <a href="#overview" class="section-tab active inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-sans transition-all bg-primary text-white shadow-sm" data-tab="overview">
+          <i data-lucide="sparkles" class="size-3.5"></i>
+          <span>Overview</span>
+        </a>
+        <a href="#services" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="services">
+          <i data-lucide="scissors" class="size-3.5"></i>
+          <span>Services</span>
+        </a>
+        <a href="#calculator" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="calculator">
+          <i data-lucide="calculator" class="size-3.5"></i>
+          <span>Price Estimator</span>
+        </a>
+        <a href="#transformations" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="transformations">
+          <i data-lucide="camera" class="size-3.5"></i>
+          <span>Transformations</span>
+        </a>
+        <a href="#reviews" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="reviews">
+          <i data-lucide="star" class="size-3.5"></i>
+          <span>Reviews</span>
+        </a>
+        <a href="#faqs" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="faqs">
+          <i data-lucide="help-circle" class="size-3.5"></i>
+          <span>FAQs</span>
+        </a>
+      </div>
+    </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="pt-20 sm:pt-28 pb-12 sm:pb-16 px-3 sm:px-6 w-full max-w-full overflow-hidden">
+  <!-- Hero & Overview Section -->
+  <section id="overview" class="pt-32 sm:pt-40 pb-12 sm:pb-16 px-3 sm:px-6 w-full max-w-full overflow-hidden">
     <div class="max-w-7xl mx-auto w-full">
       <div class="relative rounded-[1.8rem] sm:rounded-[2.5rem] overflow-hidden bg-[#1B120D] min-h-[520px] sm:min-h-[640px] md:min-h-[700px] flex flex-col items-center justify-center px-4 sm:px-6 text-center text-white shadow-2xl shadow-primary/10 border border-white/10">
         <!-- Background Hero Image -->
@@ -740,11 +770,35 @@
     </div>
   </footer>
 
-  <!-- Floating Sticky Action Button -->
-  <a href="#calculator" class="fixed bottom-6 right-6 bg-primary text-white shadow-xl rounded-full px-5 py-3.5 flex items-center gap-2.5 text-xs tracking-tight hover:-translate-y-1 transition-transform z-50 border border-primary/30 font-semibold font-sans">
+  <!-- Desktop Floating Sticky Action Button -->
+  <a href="#calculator" class="hidden sm:flex fixed bottom-6 right-6 bg-primary text-white shadow-xl rounded-full px-5 py-3.5 items-center gap-2.5 text-xs tracking-tight hover:-translate-y-1 transition-transform z-50 border border-primary/30 font-semibold font-sans">
     <i data-lucide="sparkles" class="size-4"></i>
     Book Appointment
   </a>
+
+  <!-- Mobile App Bottom Navigation Bar (Fixed 1-tap tab switcher) -->
+  <nav class="fixed bottom-0 inset-x-0 z-50 bg-[#FAF6F0]/98 backdrop-blur-xl border-t border-[#E8DCCF] py-2 px-2 sm:hidden shadow-[0_-4px_25px_rgba(0,0,0,0.08)] flex items-center justify-around">
+    <a href="#overview" class="mobile-bottom-tab flex flex-col items-center gap-0.5 text-primary text-[10px] font-semibold font-sans transition-colors" data-tab="overview">
+      <i data-lucide="sparkles" class="size-4"></i>
+      <span>Home</span>
+    </a>
+    <a href="#services" class="mobile-bottom-tab flex flex-col items-center gap-0.5 text-foreground/60 text-[10px] font-medium font-sans hover:text-primary transition-colors" data-tab="services">
+      <i data-lucide="scissors" class="size-4"></i>
+      <span>Services</span>
+    </a>
+    <a href="#calculator" class="mobile-bottom-tab flex flex-col items-center gap-0.5 text-foreground/60 text-[10px] font-medium font-sans hover:text-primary transition-colors" data-tab="calculator">
+      <i data-lucide="calculator" class="size-4"></i>
+      <span>Pricing</span>
+    </a>
+    <a href="#reviews" class="mobile-bottom-tab flex flex-col items-center gap-0.5 text-foreground/60 text-[10px] font-medium font-sans hover:text-primary transition-colors" data-tab="reviews">
+      <i data-lucide="star" class="size-4"></i>
+      <span>Reviews</span>
+    </a>
+    <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer" class="mobile-bottom-tab flex flex-col items-center gap-0.5 text-[#25D366] text-[10px] font-bold font-sans">
+      <i data-lucide="message-circle" class="size-4"></i>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
 
   <!-- Frontend dynamic binding script -->
   <script src="./script.js"></script>

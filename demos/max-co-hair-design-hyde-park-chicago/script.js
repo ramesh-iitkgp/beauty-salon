@@ -60,6 +60,7 @@ let selectedAddons = new Set(["olaplex"]);
 document.addEventListener("DOMContentLoaded", async () => {
   await loadSalonData();
   setupCalculator();
+  setupTabNavigation();
   if (window.lucide) {
     window.lucide.createIcons();
   }
@@ -329,5 +330,87 @@ function updateCalculatorDisplay() {
     if (waNumber) {
       heroWa.href = `https://wa.me/${waNumber}?text=Hi%20${encodeURIComponent(bName)},%20I'd%20like%20to%20inquire%20about%20booking%20an%20appointment!`;
     }
+  }
+}
+
+function setupTabNavigation() {
+  const topTabs = document.querySelectorAll(".section-tab");
+  const bottomTabs = document.querySelectorAll(".mobile-bottom-tab");
+  const sections = ["overview", "services", "calculator", "transformations", "reviews", "faqs"];
+
+  function setActiveTab(targetId) {
+    topTabs.forEach((tab) => {
+      const tabTarget = tab.getAttribute("data-tab");
+      if (tabTarget === targetId) {
+        tab.className =
+          "section-tab active inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-sans transition-all bg-primary text-white shadow-sm";
+        try {
+          tab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        } catch (_) {}
+      } else {
+        tab.className =
+          "section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary";
+      }
+    });
+
+    bottomTabs.forEach((tab) => {
+      const tabTarget = tab.getAttribute("data-tab");
+      if (tabTarget === targetId) {
+        tab.classList.remove("text-foreground/60");
+        tab.classList.add("text-primary", "font-semibold");
+      } else if (tabTarget) {
+        tab.classList.remove("text-primary", "font-semibold");
+        tab.classList.add("text-foreground/60");
+      }
+    });
+  }
+
+  // Click listeners for smooth instant navigation
+  [...topTabs, ...bottomTabs].forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("data-tab");
+      if (targetId) {
+        const el = document.getElementById(targetId);
+        if (el) {
+          e.preventDefault();
+          const offset = window.innerWidth < 640 ? 110 : 130;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = el.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+          setActiveTab(targetId);
+          try {
+            history.replaceState(null, "", `#${targetId}`);
+          } catch (_) {}
+        }
+      }
+    });
+  });
+
+  // IntersectionObserver for ScrollSpy tab tracking
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            if (id && sections.includes(id)) {
+              setActiveTab(id);
+            }
+          }
+        });
+      },
+      { rootMargin: "-15% 0px -65% 0px" }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
   }
 }
