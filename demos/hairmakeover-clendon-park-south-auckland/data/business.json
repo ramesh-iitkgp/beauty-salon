@@ -1,0 +1,91 @@
+{
+    "business_name": "Hairmakeover Clendon Park",
+    "source_business_name": "Hairmakeover Clendon Park",
+    "tagline": "Award-Winning Luxury Hair Styling, Color & Skincare Lounge in South Auckland",
+    "category": "Beauty Salon & Spa",
+    "phone": "6492182541",
+    "whatsapp": "",
+    "email": "",
+    "website_url": "https://hairmakeover.co.nz/",
+    "address": "\n469 Roscommon Road, Clendon Park, Auckland 2103, New Zealand",
+    "city": "South Auckland",
+    "state": "",
+    "country": "New Zealand",
+    "currency_symbol": "NZ$",
+    "currency_code": "NZD",
+    "opening_hours": "",
+    "rating": "5",
+    "review_count": "",
+    "google_maps_url": "https://www.google.com/maps/place/Hairmakeover+Clendon+Park/data=!4m7!3m6!1s0x6d0d5383b6cae665:0xf9c5f1b03f19f434!8m2!3d-37.0330705!4d174.8689172!16s%2Fg%2F11hsz35fxl!19sChIJZebKtoNTDW0RNPQZP7Dxxfk?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1",
+    "logo_url": "",
+    "hero_image": "",
+    "service_areas": [
+        "South Auckland"
+    ],
+    "social": {
+        "instagram": "https://www.instagram.com/hairmakeover_nz/",
+        "facebook": "",
+        "tiktok": ""
+    },
+    "before_after_pairs": [
+        {
+            "id": "balayage",
+            "badge": "Hair Balayage & Gloss",
+            "title": "Sun-Kissed Dimensional Blonde Balayage",
+            "description": "Brassiness neutralization, root melt, bond recovery, and mirror-shine blowout.",
+            "before": "./assets/hair_before.jpg",
+            "after": "./assets/hair_after.jpg",
+            "before_stats": "Dull brassy tones & dry frizzy ends",
+            "after_stats": "Luminous balayage & silky volume"
+        },
+        {
+            "id": "facial",
+            "badge": "Skincare Glow Facial",
+            "title": "Hydra-Infusion Pore Detox & Radiance",
+            "description": "Hydro-vacuum pore extraction, botanical peel, and hyaluronic acid ultrasonic infusion.",
+            "before": "./assets/skin_before.jpg",
+            "after": "./assets/skin_after.jpg",
+            "before_stats": "Congested pores & uneven texture",
+            "after_stats": "Plumped, dewy glass-skin glow"
+        },
+        {
+            "id": "nails",
+            "badge": "Russian BIAB Artistry",
+            "title": "Structured BIAB Gel & Glazed Chrome",
+            "description": "Precision dry e-file cuticle prep, BIAB apex overlay, and glazed donut chrome.",
+            "before": "./assets/nails_before.jpg",
+            "after": "./assets/nails_after.jpg",
+            "before_stats": "Chipped polish & ragged cuticles",
+            "after_stats": "Flawless 4-week structured gel"
+        },
+        {
+            "id": "brows",
+            "badge": "Brow & Lash Lamination",
+            "title": "Sculpted Brow Lift & Keratin Tint",
+            "description": "Custom feather brow lamination, shape mapping, and dramatic curled lash lift with deep tint.",
+            "before": "./assets/brow_before.jpg",
+            "after": "./assets/brow_after.jpg",
+            "before_stats": "Sparse untamed brows & straight lashes",
+            "after_stats": "Full fluffy laminated brows & lifted lashes"
+        }
+    ],
+    "services": [
+        {
+            "name": "Signature Precision Haircut & Blowout",
+            "description": "Bespoke consultation, revitalizing shampoo, tailored dry or wet cut, followed by our signature bouncy voluminous blowout.",
+            "image": ""
+        },
+        {
+            "name": "Artisan Balayage & Color Gloss",
+            "description": "Hand-painted dimensional lightening tailored to your natural movement, sealed with a customized acidic toner and gloss.",
+            "image": ""
+        },
+        {
+            "name": "Hydra-Infusion Glow Facial",
+            "description": "Multi-step medical-grade hydra-dermabrasion, ultrasonic pore extraction, botanical peel, and collagen LED rejuvenation.",
+            "image": ""
+        }
+    ],
+    "business_images": [],
+    "reviews": []
+}
