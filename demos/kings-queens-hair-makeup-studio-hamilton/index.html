@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="/beauty-salon/demos/kings-queens-hair-makeup-studio-hamilton/">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxe Glow Salon | Luxury Hair, Color &amp; Beauty Lounge</title>
+  <meta name="description" content="Award-winning luxury salon specializing in precision layered cuts, custom balayage blonding, hydra skincare, and 1-on-1 personalized styling.">
+
+  <!-- Tailwind CSS & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts: Newsreader (Serif) + Inter (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#FAF6F0',
+            foreground: '#4A3427',
+            primary: '#986A3E',
+            'primary-dark': '#784F27',
+            secondary: '#F3EADF',
+            muted: '#8C7B70',
+            border: '#E8DCCF',
+            darkcard: '#1B120D'
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'serif'],
+            newsreader: ['Newsreader', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    #overview, #services, #calculator, #transformations, #reviews, #faqs {
+      scroll-margin-top: 130px;
+    }
+    @media (max-width: 640px) {
+      #overview, #services, #calculator, #transformations, #reviews, #faqs {
+        scroll-margin-top: 110px;
+      }
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FAF6F0;
+      color: #4A3427;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4, h5, h6, .font-newsreader {
+      font-family: 'Newsreader', serif;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+    }
+    .glass-pill {
+      background: rgba(152, 106, 62, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(152, 106, 62, 0.2);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #D4C3B2;
+      border-radius: 999px;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-white">
+
+  <!-- Navigation Header -->
+  <nav class="fixed top-0 inset-x-0 w-full z-50 bg-[#FAF6F0]/95 backdrop-blur-md border-b border-[#E8DCCF]/80">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-6">
+      
+      <!-- Brand Logo / Business Name (Isolated & Prominent, Truncated on Mobile to prevent overflow) -->
+      <a href="#" class="flex items-center gap-2 bg-white/80 border border-[#E8DCCF] px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm hover:border-primary transition-all min-w-0 max-w-[62vw] sm:max-w-[360px] md:max-w-none shrink">
+        <span class="flex items-center justify-center bg-primary text-white rounded-full size-6 sm:size-7 shadow-sm shrink-0">
+          <i data-lucide="sparkles" class="size-3.5 sm:size-4"></i>
+        </span>
+        <span class="text-sm sm:text-lg md:text-2xl tracking-tight font-newsreader font-normal text-foreground truncate block" data-business-name>
+          Luxe Glow Salon
+        </span>
+      </a>
+
+      <!-- Nav Links (Center - Desktop) -->
+      <div class="hidden lg:flex items-center space-x-7 text-sm font-normal text-foreground/80">
+        <a href="#overview" class="text-primary font-medium hover:text-primary-dark transition-colors font-sans">
+          Home
+        </a>
+        <a href="#transformations" class="hover:text-primary transition-colors font-sans font-medium">
+          Transformations
+        </a>
+        <a href="#services" class="hover:text-primary transition-colors font-sans">
+          Services
+        </a>
+        <a href="#calculator" class="hover:text-primary transition-colors font-sans">
+          Price Estimator
+        </a>
+        <a href="#reviews" class="hover:text-primary transition-colors font-sans">
+          Reviews
+        </a>
+      </div>
+
+      <!-- Action & Phone (Right) -->
+      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        <a href="tel:" data-phone class="flex items-center justify-center size-8 sm:size-auto sm:px-3 sm:py-1.5 rounded-full bg-white/90 border border-[#E8DCCF] text-primary shadow-sm hover:border-primary transition-all shrink-0" aria-label="Call business" title="Call Us">
+          <i data-lucide="phone" class="size-3.5 sm:size-4 text-primary"></i>
+          <span data-phone-display class="hidden md:inline ml-1.5 text-xs text-foreground/80 font-sans font-medium">+44 20 7946 0888</span>
+        </a>
+        <a href="#calculator" class="flex items-center justify-center size-8 sm:size-auto sm:px-4 sm:py-2 bg-secondary text-foreground rounded-full text-xs sm:text-sm font-medium hover:bg-secondary/80 transition-colors font-sans shadow-sm border border-border shrink-0" aria-label="Book Appointment" title="Book Appointment">
+          <span class="flex items-center justify-center bg-white rounded-full size-5 sm:size-6 shadow-sm text-primary">
+            <i data-lucide="calendar" class="size-3 sm:size-3.5"></i>
+          </span>
+          <span class="hidden sm:inline ml-1.5">Book</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Section Switcher Tabs Bar (Option A: Tabbed App Interface) -->
+    <div class="border-t border-[#E8DCCF]/60 bg-[#FAF6F0]/98 py-2 px-3 sm:px-6 overflow-x-auto custom-scrollbar">
+      <div class="max-w-7xl mx-auto flex items-center gap-2 sm:gap-3 min-w-max">
+        <a href="#overview" class="section-tab active inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-sans transition-all bg-primary text-white shadow-sm" data-tab="overview">
+          <i data-lucide="sparkles" class="size-3.5"></i>
+          <span>Overview</span>
+        </a>
+        <a href="#calculator" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="calculator">
+          <i data-lucide="calculator" class="size-3.5"></i>
+          <span>Price Estimator</span>
+        </a>
+        <a href="#transformations" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="transformations">
+          <i data-lucide="camera" class="size-3.5"></i>
+          <span>Transformations</span>
+        </a>
+        <a href="#services" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="services">
+          <i data-lucide="scissors" class="size-3.5"></i>
+          <span>Services</span>
+        </a>
+        <a href="#reviews" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="reviews">
+          <i data-lucide="star" class="size-3.5"></i>
+          <span>Reviews</span>
+        </a>
+        <a href="#faqs" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="faqs">
+          <i data-lucide="help-circle" class="size-3.5"></i>
+          <span>FAQs</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero & Overview Section -->
+  <section id="overview" class="pt-32 sm:pt-40 pb-12 sm:pb-16 px-3 sm:px-6 w-full max-w-full overflow-hidden">
+    <div class="max-w-7xl mx-auto w-full">
+      <div class="relative rounded-[1.8rem] sm:rounded-[2.5rem] overflow-hidden bg-[#1B120D] min-h-[520px] sm:min-h-[640px] md:min-h-[700px] flex flex-col items-center justify-center px-4 sm:px-6 text-center text-white shadow-2xl shadow-primary/10 border border-white/10">
+        <!-- Background Hero Image -->
+        <img id="hero-bg-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=80" alt="Salon styling session" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity">
+
+        <!-- Gradient Overlays -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.22),transparent_30%),radial-gradient(circle_at_80%_70%,rgba(152,106,62,0.5),transparent_35%),linear-gradient(to_bottom,rgba(0,0,0,0.25),rgba(0,0,0,0.75))] pointer-events-none"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-3xl flex flex-col items-center pt-6 sm:pt-8 pb-10 sm:pb-16 w-full">
+          
+          <!-- Highlighted Business Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-white/15 backdrop-blur-xl border border-white/25 text-[11px] sm:text-xs uppercase tracking-wider text-white mb-5 sm:mb-6 font-sans shadow-lg max-w-full text-center flex-wrap justify-center">
+            <i data-lucide="sparkles" class="size-3.5 text-amber-300 shrink-0"></i>
+            <span class="font-semibold" data-business-name>Luxe Glow Salon</span>
+            <span class="hidden sm:inline">• Luxury Hair Sanctuary</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-[5.2rem] leading-[1.08] mb-4 sm:mb-6 max-w-4xl tracking-tight font-newsreader font-light">
+            Bespoke hair artistry, luminous color &amp; radiant beauty care
+          </h1>
+          
+          <p class="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl font-newsreader font-light leading-relaxed mb-6 sm:mb-8 px-2" data-tagline>
+            A premier boutique salon in <span data-city>London</span>, specializing in dimensional balayage blonding, precision haircutting, medical-grade hydra skincare, and tailored 1-on-1 beauty rituals.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center w-full max-w-md sm:max-w-none">
+            <a href="#calculator" class="w-full sm:w-auto flex gap-2 justify-center hover:bg-white/20 transition-all text-xs sm:text-sm font-medium text-white bg-white/10 border-white/20 border rounded-full px-5 sm:px-6 py-3 sm:py-3.5 backdrop-blur-md items-center font-sans shadow-lg">
+              <span class="flex items-center justify-center bg-white text-black rounded-full size-5 sm:size-6 shrink-0">
+                <i data-lucide="arrow-right" class="size-3 sm:size-3.5"></i>
+              </span>
+              Estimate &amp; Book Appointment
+            </a>
+            <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-medium hover:bg-[#1EBE5D] transition-all font-sans shadow-lg">
+              <i data-lucide="message-circle" class="size-4 shrink-0"></i>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Floating Price Badge (Bottom Left) -->
+        <div class="absolute left-6 bottom-6 z-20 hidden md:flex items-center gap-4 bg-white/15 backdrop-blur-xl border border-white/20 rounded-3xl p-4 text-left shadow-2xl">
+          <div class="size-12 rounded-2xl bg-white text-primary flex items-center justify-center shadow-sm">
+            <i data-lucide="scissors" class="size-6"></i>
+          </div>
+          <div>
+            <p class="text-[10px] uppercase tracking-widest text-white/70 font-semibold font-sans">
+              Precision Cuts from
+            </p>
+            <p class="text-2xl leading-none font-newsreader font-light" id="hero-cuts-price">
+              £45–£65
+            </p>
+          </div>
+        </div>
+
+        <!-- Floating Treatment Badges (Bottom Right) -->
+        <div class="absolute bottom-6 right-6 z-20 hidden md:grid grid-cols-3 gap-2 text-xs font-medium">
+          <span class="bg-white/15 backdrop-blur border border-white/20 rounded-full px-4 py-2 font-sans text-white shadow-sm" id="hero-balayage-badge">
+            Balayage £160
+          </span>
+          <span class="bg-white/15 backdrop-blur border border-white/20 rounded-full px-4 py-2 font-sans text-white shadow-sm" id="hero-facial-badge">
+            Hydra Facial £95+
+          </span>
+          <span class="bg-white/15 backdrop-blur border border-white/20 rounded-full px-4 py-2 font-sans text-white shadow-sm" id="hero-nails-badge">
+            BIAB Nails £55
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-medium uppercase tracking-wider text-primary mb-8 font-sans">
+        <span class="size-1.5 rounded-full bg-primary"></span>
+        Top Rated Salon in <span data-city>London</span>
+      </div>
+
+      <h2 class="text-3xl md:text-5xl leading-tight text-foreground font-newsreader font-light">
+        We blend bespoke creative artistry with meticulous technique
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&q=80&w=140" alt="Glossy styled hair" class="inline-block h-10 w-10 md:h-14 md:w-14 rounded-full object-cover align-middle mx-2 border-2 border-white shadow-sm">
+        to craft radiant lived-in color, precision layered cuts, and luminous skincare rituals inside our tranquil
+        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=140" alt="Salon chair" class="inline-block h-10 w-10 md:h-14 md:w-14 rounded-full object-cover align-middle mx-2 border-2 border-white shadow-sm">
+        luxury boutique salon.
+      </h2>
+    </div>
+  </section>
+
+  <!-- Bento Image Grid ("Inside the Studio") -->
+  <section class="py-16 px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-pill text-xs font-medium uppercase tracking-wider text-primary mb-3 font-sans">
+            <span class="size-1.5 rounded-full bg-primary"></span>
+            Inside the Studio
+          </div>
+          <h2 class="text-4xl md:text-5xl tracking-tight leading-tight max-w-2xl font-newsreader font-light">
+            Bespoke styling, artisan color &amp; glowing aesthetic rituals
+          </h2>
+        </div>
+        <p class="text-foreground/70 text-sm md:text-base font-medium max-w-sm font-sans">
+          A glimpse into the textures, tones, and relaxing salon moments our clients adore.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-stretch">
+        <!-- Left Column -->
+        <div class="md:col-span-3 grid grid-cols-2 md:grid-cols-1 gap-5">
+          <div class="relative rounded-[2rem] overflow-hidden min-h-[220px] md:min-h-[290px] shadow-sm group">
+            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=700" alt="Precision haircut styling" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <p class="text-xs uppercase tracking-widest text-white/70 font-semibold mb-1 font-sans">
+                Precision Artistry
+              </p>
+              <p class="text-xl tracking-tight font-newsreader font-light">
+                Layered Cuts &amp; Sculpted Movement
+              </p>
+            </div>
+          </div>
+          <div class="relative rounded-[2rem] overflow-hidden min-h-[200px] shadow-sm group">
+            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=700" alt="Curly hair styling result" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur rounded-full px-3 py-1 text-xs font-semibold text-primary font-sans">
+              Curl Health &amp; Silk Gloss
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Signature Bento Box -->
+        <div class="md:col-span-6 relative rounded-[2.5rem] overflow-hidden min-h-[500px] shadow-xl shadow-primary/10 group">
+          <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80&w=1100" alt="Salon color appointment" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.75),rgba(0,0,0,0.1))]"></div>
+          
+          <div class="absolute top-6 right-6 bg-white/20 backdrop-blur-xl border border-white/25 rounded-full px-4 py-2 text-white text-xs font-medium flex items-center gap-2 font-sans">
+            <i data-lucide="sparkles" class="size-4"></i>
+            Artisan Color Mastery
+          </div>
+
+          <div class="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row md:items-end md:justify-between gap-5 text-white">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-white/70 font-semibold mb-2 font-sans">
+                Signature Service
+              </p>
+              <h3 class="text-3xl md:text-4xl tracking-tight leading-snug mb-3 font-newsreader font-light">
+                Dimensional blonding, seamless balayage &amp; effortless grow-out
+              </h3>
+              <p class="text-white/80 text-sm font-medium max-w-md font-sans">
+                Consultation-led appointments prioritizing structural hair health, bond reconstruction, vibrant tone longevity, and effortless maintenance.
+              </p>
+            </div>
+            <div class="bg-white text-foreground rounded-3xl p-4 min-w-[140px] shadow-lg text-center">
+              <p class="text-[10px] uppercase tracking-widest text-primary font-semibold mb-1 font-sans">
+                Cuts from
+              </p>
+              <p class="text-3xl tracking-tight font-newsreader font-light" id="bento-cut-price">
+                £45
+              </p>
+              <p class="text-xs text-foreground/60 font-medium font-sans">
+                wash &amp; signature blowout
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="md:col-span-3 grid grid-cols-1 gap-5">
+          <div class="relative rounded-[2rem] overflow-hidden min-h-[240px] shadow-sm group">
+            <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=800" alt="Fresh salon blowout" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <p class="text-2xl tracking-tight font-newsreader font-light">
+                Bouncy Voluminous Blowouts
+              </p>
+              <p class="text-xs text-white/75 font-medium font-sans">
+                Silky polish &amp; long-lasting bounce
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-secondary rounded-[2rem] p-6 min-h-[180px] flex flex-col justify-between shadow-sm border border-border/70">
+            <div class="size-11 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
+              <i data-lucide="eye" class="size-5"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl tracking-tight mb-1 font-newsreader font-light">
+                Brows, Lashes &amp; Hydra Skincare
+              </h3>
+              <p class="text-xs text-foreground/70 font-medium font-sans">
+                Bespoke facial glow, brow lamination &amp; lash enhancements crafted for effortless radiance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Treatment Estimator & Booking Calculator -->
+  <section class="py-24 px-6 bg-secondary/50" id="calculator">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col items-center mb-12 text-center">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill text-xs font-medium uppercase tracking-wider text-primary mb-4 bg-white/70 font-sans shadow-sm">
+          <span class="size-1.5 rounded-full bg-primary"></span>
+          Interactive Price Estimator
+        </div>
+        <h2 class="text-4xl md:text-5xl font-newsreader font-light mb-3">
+          Tailor Your Salon Experience
+        </h2>
+        <p class="text-foreground/70 text-sm md:text-base font-medium max-w-md font-sans">
+          Select your signature service and luxury add-ons for an instant transparent estimate and 1-click WhatsApp booking.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-[2.5rem] p-8 md:p-12 border border-border shadow-xl">
+        <!-- Step 1: Select Primary Treatment -->
+        <div class="mb-8">
+          <p class="text-xs uppercase tracking-widest text-primary font-semibold mb-4 font-sans flex items-center gap-2">
+            <span class="size-6 rounded-full bg-secondary text-primary flex items-center justify-center text-xs font-bold">1</span>
+            Select Primary Treatment
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5" id="treatment-selector-grid">
+            <button class="treatment-btn active border-2 border-primary bg-secondary/30 rounded-2xl p-4 text-left transition-all hover:border-primary" data-key="balayage">
+              <div class="flex justify-between items-start mb-1">
+                <h4 class="font-newsreader text-xl font-normal text-foreground">Artisan Balayage &amp; Gloss</h4>
+                <i data-lucide="check" class="size-4 text-primary check-icon"></i>
+              </div>
+              <p class="text-xs text-foreground/60 font-sans mb-2">Dimensional blonding + toner gloss</p>
+              <strong class="text-sm font-sans text-primary" id="price-tag-balayage">From £160 • 180m</strong>
+            </button>
+
+            <button class="treatment-btn border border-border bg-white rounded-2xl p-4 text-left transition-all hover:border-primary" data-key="cut">
+              <div class="flex justify-between items-start mb-1">
+                <h4 class="font-newsreader text-xl font-normal text-foreground">Precision Cut &amp; Blowout</h4>
+                <i data-lucide="check" class="size-4 text-primary check-icon hidden"></i>
+              </div>
+              <p class="text-xs text-foreground/60 font-sans mb-2">Scalp wash, custom cut &amp; volume style</p>
+              <strong class="text-sm font-sans text-primary" id="price-tag-cut">From £65 • 60m</strong>
+            </button>
+
+            <button class="treatment-btn border border-border bg-white rounded-2xl p-4 text-left transition-all hover:border-primary" data-key="facial">
+              <div class="flex justify-between items-start mb-1">
+                <h4 class="font-newsreader text-xl font-normal text-foreground">Hydra-Glow Radiance Facial</h4>
+                <i data-lucide="check" class="size-4 text-primary check-icon hidden"></i>
+              </div>
+              <p class="text-xs text-foreground/60 font-sans mb-2">Hydro-vacuum pore detox &amp; peptide infusion</p>
+              <strong class="text-sm font-sans text-primary" id="price-tag-facial">From £95 • 75m</strong>
+            </button>
+
+            <button class="treatment-btn border border-border bg-white rounded-2xl p-4 text-left transition-all hover:border-primary" data-key="biab">
+              <div class="flex justify-between items-start mb-1">
+                <h4 class="font-newsreader text-xl font-normal text-foreground">BIAB Russian Gel Manicure</h4>
+                <i data-lucide="check" class="size-4 text-primary check-icon hidden"></i>
+              </div>
+              <p class="text-xs text-foreground/60 font-sans mb-2">Dry e-file prep &amp; apex nail overlay</p>
+              <strong class="text-sm font-sans text-primary" id="price-tag-biab">From £55 • 60m</strong>
+            </button>
+
+            <button class="treatment-btn border border-border bg-white rounded-2xl p-4 text-left transition-all hover:border-primary" data-key="massage">
+              <div class="flex justify-between items-start mb-1">
+                <h4 class="font-newsreader text-xl font-normal text-foreground">Aromatherapy Spa Massage</h4>
+                <i data-lucide="check" class="size-4 text-primary check-icon hidden"></i>
+              </div>
+              <p class="text-xs text-foreground/60 font-sans mb-2">Warm botanical oils &amp; tension relief</p>
+              <strong class="text-sm font-sans text-primary" id="price-tag-massage">From £85 • 60m</strong>
+            </button>
+
+            <button class="treatment-btn border border-border bg-white rounded-2xl p-4 text-left transition-all hover:border-primary" data-key="bridal">
+              <div class="flex justify-between items-start mb-1">
+                <h4 class="font-newsreader text-xl font-normal text-foreground">Couture Bridal Hair &amp; Makeup</h4>
+                <i data-lucide="check" class="size-4 text-primary check-icon hidden"></i>
+              </div>
+              <p class="text-xs text-foreground/60 font-sans mb-2">Trial-tested styling &amp; 24hr HD airbrush glam</p>
+              <strong class="text-sm font-sans text-primary" id="price-tag-bridal">From £220 • 150m</strong>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Luxury Add-ons -->
+        <div class="mb-10">
+          <p class="text-xs uppercase tracking-widest text-primary font-semibold mb-4 font-sans flex items-center gap-2">
+            <span class="size-6 rounded-full bg-secondary text-primary flex items-center justify-center text-xs font-bold">2</span>
+            Luxury Add-ons (Optional)
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="flex items-center justify-between p-4 rounded-2xl border border-border bg-secondary/20 hover:bg-secondary/40 transition-colors cursor-pointer">
+              <div class="flex items-center gap-3">
+                <input type="checkbox" class="addon-checkbox size-4 accent-primary rounded" value="olaplex" checked>
+                <div>
+                  <span class="font-sans text-sm font-medium text-foreground block">Olaplex &amp; K18 Bond Therapy</span>
+                  <span class="text-xs text-foreground/60">Restores structural hair bonds during color</span>
+                </div>
+              </div>
+              <strong class="text-sm font-sans text-primary">+£25</strong>
+            </label>
+
+            <label class="flex items-center justify-between p-4 rounded-2xl border border-border bg-secondary/20 hover:bg-secondary/40 transition-colors cursor-pointer">
+              <div class="flex items-center gap-3">
+                <input type="checkbox" class="addon-checkbox size-4 accent-primary rounded" value="collagen_mask">
+                <div>
+                  <span class="font-sans text-sm font-medium text-foreground block">Collagen Eye &amp; Lip Plump</span>
+                  <span class="text-xs text-foreground/60">Instant hydration &amp; fine-line smoothing</span>
+                </div>
+              </div>
+              <strong class="text-sm font-sans text-primary">+£20</strong>
+            </label>
+
+            <label class="flex items-center justify-between p-4 rounded-2xl border border-border bg-secondary/20 hover:bg-secondary/40 transition-colors cursor-pointer">
+              <div class="flex items-center gap-3">
+                <input type="checkbox" class="addon-checkbox size-4 accent-primary rounded" value="nail_art">
+                <div>
+                  <span class="font-sans text-sm font-medium text-foreground block">Hand-Painted Chrome Nail Art</span>
+                  <span class="text-xs text-foreground/60">French chrome, ombre or custom minimalist art</span>
+                </div>
+              </div>
+              <strong class="text-sm font-sans text-primary">+£18</strong>
+            </label>
+
+            <label class="flex items-center justify-between p-4 rounded-2xl border border-border bg-secondary/20 hover:bg-secondary/40 transition-colors cursor-pointer">
+              <div class="flex items-center gap-3">
+                <input type="checkbox" class="addon-checkbox size-4 accent-primary rounded" value="scalp_scrub">
+                <div>
+                  <span class="font-sans text-sm font-medium text-foreground block">Detox Botanical Scalp Scrub</span>
+                  <span class="text-xs text-foreground/60">Exfoliates buildup &amp; stimulates follicles</span>
+                </div>
+              </div>
+              <strong class="text-sm font-sans text-primary">+£22</strong>
+            </label>
+          </div>
+        </div>
+
+        <!-- Calculated Summary Box -->
+        <div class="bg-primary text-white rounded-[2rem] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl shadow-primary/20">
+          <div>
+            <span class="text-xs uppercase tracking-widest text-white/70 font-semibold font-sans block mb-1">
+              Estimated Total
+            </span>
+            <div class="flex items-baseline gap-3">
+              <span class="text-4xl md:text-5xl font-newsreader font-light" id="calc-total-display">£185</span>
+              <span class="text-sm text-white/80 font-sans font-medium" id="calc-duration-display">(Approx. 180 Mins)</span>
+            </div>
+            <p class="text-xs text-white/75 font-sans mt-1" id="calc-summary-details">
+              Artisan Balayage &amp; Color Gloss + Olaplex Bond Therapy
+            </p>
+          </div>
+
+          <a id="calc-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-foreground px-8 py-4 rounded-full text-sm font-semibold hover:bg-white/90 transition-transform hover:scale-[1.02] shadow-lg font-sans">
+            <i data-lucide="message-circle" class="size-4 text-[#25D366]"></i>
+            Reserve Appointment on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Client Transformations Slider / Comparison -->
+  <section class="py-24 px-6 text-center" id="transformations">
+    <div class="max-w-7xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-pill text-xs font-medium uppercase tracking-wider text-primary mb-4 font-sans">
+        <span class="size-1.5 rounded-full bg-primary"></span>
+        Client Transformations
+      </div>
+      <h2 class="text-4xl md:text-5xl mb-4 max-w-xl mx-auto font-newsreader font-light">
+        Real Transformations, Radiant Confidence
+      </h2>
+      <p class="text-foreground/70 text-sm md:text-base font-medium max-w-md mx-auto mb-16 font-sans">
+        Browse real lived-in color transitions, precision haircut makeovers, and dewy skincare transformations.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left" id="transformations-container">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Menu Section -->
+  <section class="py-24 px-6 bg-[#FAF6F0]" id="services">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col items-center mb-16 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-pill text-xs font-medium uppercase tracking-wider text-primary mb-4 font-sans">
+          <span class="size-1.5 rounded-full bg-primary"></span>
+          Service Menu
+        </div>
+        <h2 class="text-4xl md:text-5xl font-newsreader font-light">
+          Hair, Color, Skincare &amp; Aesthetics
+        </h2>
+      </div>
+
+      <div class="space-y-4" id="services-accordion-list">
+        <!-- Item 1 -->
+        <div class="border border-border bg-white rounded-3xl p-6 md:p-8 shadow-sm">
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+            <div class="flex items-center gap-4">
+              <div class="flex items-center justify-center size-12 rounded-full bg-secondary text-primary shrink-0">
+                <i data-lucide="scissors" class="size-6"></i>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-newsreader font-light">
+                Precision cuts, styling &amp; curl care
+              </h3>
+            </div>
+
+            <div class="md:w-1/2 flex flex-col items-start md:items-end gap-4">
+              <p class="text-foreground/70 text-sm font-medium leading-relaxed font-sans">
+                Women's, men’s, and bespoke texture cuts focused on layered movement, healthy ends, and voluminous blowout finishing.
+              </p>
+              <a href="#calculator" class="inline-flex items-center gap-2 bg-secondary text-foreground px-5 py-2 rounded-full text-xs font-medium hover:bg-secondary/80 transition-colors font-sans">
+                From £45 • See pricing
+                <i data-lucide="arrow-right" class="size-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="border border-border bg-white rounded-3xl p-6 md:p-8 shadow-sm">
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+            <div class="flex items-center gap-4">
+              <div class="flex items-center justify-center size-12 rounded-full bg-secondary text-primary shrink-0">
+                <i data-lucide="palette" class="size-6"></i>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-newsreader font-light">
+                Artisan blonding &amp; balayage melts
+              </h3>
+            </div>
+
+            <div class="md:w-1/2 flex flex-col items-start md:items-end gap-4">
+              <p class="text-foreground/70 text-sm font-medium leading-relaxed font-sans">
+                Multi-dimensional balayage, babylights, root smudges, toner glossing, and Olaplex bond repair for low-maintenance grow-out.
+              </p>
+              <a href="#calculator" class="inline-flex items-center gap-2 bg-secondary text-foreground px-5 py-2 rounded-full text-xs font-medium hover:bg-secondary/80 transition-colors font-sans">
+                From £160 • See pricing
+                <i data-lucide="arrow-right" class="size-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="border border-border bg-white rounded-3xl p-6 md:p-8 shadow-sm">
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+            <div class="flex items-center gap-4">
+              <div class="flex items-center justify-center size-12 rounded-full bg-secondary text-primary shrink-0">
+                <i data-lucide="sparkles" class="size-6"></i>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-newsreader font-light">
+                Hydra skincare &amp; aesthetic beauty
+              </h3>
+            </div>
+
+            <div class="md:w-1/2 flex flex-col items-start md:items-end gap-4">
+              <p class="text-foreground/70 text-sm font-medium leading-relaxed font-sans">
+                Medical-grade ultrasonic pore detox, collagen LED rejuvenation, relaxing aromatherapy, and brow/lash enhancements.
+              </p>
+              <a href="#calculator" class="inline-flex items-center gap-2 bg-secondary text-foreground px-5 py-2 rounded-full text-xs font-medium hover:bg-secondary/80 transition-colors font-sans">
+                From £85 • See pricing
+                <i data-lucide="arrow-right" class="size-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Reviews Section -->
+  <section class="py-24 bg-secondary/60 overflow-hidden" id="reviews">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-12">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-pill text-xs font-medium uppercase tracking-wider text-primary mb-4 bg-white/70 font-sans shadow-sm">
+            <span class="size-1.5 rounded-full bg-primary"></span>
+            Verified Client Love
+          </div>
+          <h2 class="text-4xl md:text-5xl tracking-tight max-w-lg font-newsreader font-light">
+            What <span data-city>London</span> clients say
+          </h2>
+        </div>
+        <p class="text-foreground/70 text-sm md:text-base font-medium max-w-sm font-sans">
+          Warm boutique hospitality, bespoke consultations, and radiant hair you'll fall in love with.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="reviews-container">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="py-24 px-6 max-w-7xl mx-auto" id="faqs">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <!-- Left: Title & Support CTA -->
+      <div class="lg:col-span-5 flex flex-col justify-between">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-pill text-xs font-medium uppercase tracking-wider text-primary mb-6 bg-secondary font-sans">
+            <span class="size-1.5 rounded-full bg-primary"></span>
+            FAQs
+          </div>
+          <h2 class="text-4xl md:text-6xl mb-6 leading-[1.1] font-newsreader font-light">
+            Salon questions, answered
+          </h2>
+          <p class="text-foreground/70 text-sm font-medium font-sans">
+            Everything you need to know about our consultations, professional hair products, and booking.
+          </p>
+        </div>
+
+        <div class="rounded-[2.5rem] bg-[#1B120D] text-white p-8 mt-8 flex flex-col justify-end font-sans shadow-lg border border-white/10">
+          <p class="text-sm text-white/80 leading-relaxed">
+            ✦ Complimentary refreshment bar with artisan barista coffee, herbal wellness teas, and chilled sparkling beverages served at every appointment.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: FAQ Accordions -->
+      <div class="lg:col-span-7 space-y-4" id="faqs-container">
+        <div class="bg-white rounded-[2rem] p-6 md:p-8 border border-border shadow-sm">
+          <h3 class="text-xl text-primary font-newsreader font-light mb-2">
+            Do I need a consultation before my appointment?
+          </h3>
+          <p class="text-foreground/75 text-sm font-sans leading-relaxed">
+            We provide a complimentary 1-on-1 consultation at the start of every appointment. For dramatic color changes, color corrections, or extensions, we recommend booking a dedicated 15-minute consultation beforehand.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-[2rem] p-6 md:p-8 border border-border shadow-sm">
+          <h3 class="text-xl text-foreground font-newsreader font-light mb-2">
+            What professional products and hair color do you use?
+          </h3>
+          <p class="text-foreground/75 text-sm font-sans leading-relaxed">
+            We exclusively use cruelty-free, luxury organic professional formulas including Olaplex bond repair, Davines botanicals, and certified clinical skincare serums.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-[2rem] p-6 md:p-8 border border-border shadow-sm">
+          <h3 class="text-xl text-foreground font-newsreader font-light mb-2">
+            How can I reserve my chair?
+          </h3>
+          <p class="text-foreground/75 text-sm font-sans leading-relaxed">
+            Use our 24/7 Treatment Estimator above or tap the WhatsApp button to message our concierge team directly for open weekly slots.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-20 pb-10 bg-background border-t border-black/5 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="text-2xl tracking-tight font-newsreader font-light text-foreground" data-business-name>
+              Luxe Glow Salon
+            </span>
+            <i data-lucide="sparkles" class="size-5 text-primary/70 -ml-1"></i>
+          </div>
+          <p class="text-foreground/70 text-sm max-w-sm mb-6 font-sans leading-relaxed" data-tagline>
+            Bespoke hair design, artisan color &amp; radiant beauty care. A premier boutique salon in <span data-city>London</span>.
+          </p>
+          <p class="text-xs text-foreground/60 font-sans mb-4">
+            📍 <span data-address>78 Regent Street, Mayfair, London</span>
+          </p>
+          <div class="flex gap-3">
+            <a href="#" data-instagram class="size-10 rounded-full bg-secondary border border-border flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm">
+              <i data-lucide="instagram" class="size-4"></i>
+            </a>
+            <a href="#" data-facebook class="size-10 rounded-full bg-secondary border border-border flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm">
+              <i data-lucide="facebook" class="size-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 md:col-start-7">
+          <h4 class="font-semibold text-xs mb-5 font-sans tracking-widest uppercase text-foreground">
+            Opening Hours
+          </h4>
+          <p class="text-sm text-foreground/70 font-sans leading-relaxed" data-hours>
+            Tue - Sat: 9:00 AM - 8:00 PM<br>
+            Sun: 10:00 AM - 5:00 PM<br>
+            Mon: Closed
+          </p>
+        </div>
+
+        <div class="md:col-span-3">
+          <h4 class="font-semibold text-xs mb-5 font-sans tracking-widest uppercase text-foreground">
+            Direct Contact
+          </h4>
+          <ul class="space-y-3 text-sm text-foreground/70 font-sans">
+            <li>📞 <a href="tel:" data-phone class="hover:text-primary transition-colors"><span data-phone-display>+44 20 7946 0888</span></a></li>
+            <li>💬 <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer" class="text-primary font-medium hover:underline">Chat on WhatsApp</a></li>
+            <li>✉️ <a href="mailto:" data-email class="hover:text-primary transition-colors"><span data-email-display>hello@luxeglowsalon.com</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-black/5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-xs text-foreground/50 font-sans">
+          &copy; <span id="year">2026</span> <span data-business-name>Luxe Glow Salon</span>. All rights reserved. • Powered by <strong>WebKartX</strong>
+        </div>
+        <div class="flex gap-6 text-xs text-foreground/50 font-sans">
+          <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Desktop Floating Sticky Action Button -->
+  <a href="#calculator" class="hidden sm:flex fixed bottom-6 right-6 bg-primary text-white shadow-xl rounded-full px-5 py-3.5 items-center gap-2.5 text-xs tracking-tight hover:-translate-y-1 transition-transform z-50 border border-primary/30 font-semibold font-sans">
+    <i data-lucide="sparkles" class="size-4"></i>
+    Book Appointment
+  </a>
+
+  <!-- Mobile App Bottom Navigation Bar (Fixed 1-tap tab switcher) -->
+  <nav class="fixed bottom-0 inset-x-0 z-50 bg-[#FAF6F0]/98 backdrop-blur-xl border-t border-[#E8DCCF] py-2 px-2 sm:hidden shadow-[0_-4px_25px_rgba(0,0,0,0.08)] flex items-center justify-around">
+    <a href="#overview" class="mobile-bottom-tab flex flex-col items-center gap-0.5 text-primary text-[10px] font-semibold font-sans transition-colors" data-tab="overview">
+      <i data-lucide="sparkles" class="size-4"></i>
+      <span>Home</span>
+    </a>
+    <a href="#services" class="mobile-bottom-tab flex flex-col items-center gap-0.5 text-foreground/60 text-[10px] font-medium font-sans hover:text-primary transition-colors" data-tab="services">
+      <i data-lucide="scissors" class="size-4"></i>
+      <span>Services</span>
+    </a>
+    <a href="#calculator" class="mobile-bottom-tab flex flex-col items-center gap-0.5 text-foreground/60 text-[10px] font-medium font-sans hover:text-primary transition-colors" data-tab="calculator">
+      <i data-lucide="calculator" class="size-4"></i>
+      <span>Pricing</span>
+    </a>
+    <a href="#reviews" class="mobile-bottom-tab flex flex-col items-center gap-0.5 text-foreground/60 text-[10px] font-medium font-sans hover:text-primary transition-colors" data-tab="reviews">
+      <i data-lucide="star" class="size-4"></i>
+      <span>Reviews</span>
+    </a>
+    <a href="#" data-whatsapp-link target="_blank" rel="noopener noreferrer" class="mobile-bottom-tab flex flex-col items-center gap-0.5 text-[#25D366] text-[10px] font-bold font-sans">
+      <i data-lucide="message-circle" class="size-4"></i>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+
+  <!-- Frontend dynamic binding script -->
+  <script src="./script.js"></script>
+</body>
+</html>
