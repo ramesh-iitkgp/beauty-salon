@@ -1,7 +1,7 @@
 {
   "_comment": "Authoritative data schema for Beauty Salon & Spa demo website. Automatically populated by WebKartX CRM.",
   "business_name": "Luxe Glow Salon & Spa",
-  "tagline": "Award-Winning Luxury Hair Styling, Skincare Facials & Aesthetic Spa Treatments",
+  "tagline": "A premier luxury boutique salon crafting bespoke hair styling, luminous balayage color, and restorative skincare facials.",
   "category": "Beauty Salon & Spa",
   "phone": "+44 20 7946 0888",
   "whatsapp": "+44 20 7946 0888",
@@ -11,7 +11,7 @@
   "city": "London",
   "state": "Greater London",
   "country": "United Kingdom",
-  "currency_symbol": "£",
+  "currency_symbol": "\u00a3",
   "currency_code": "GBP",
   "opening_hours": "Tue - Sat: 9:00 AM - 8:00 PM | Sun: 10:00 AM - 5:00 PM | Mon: Closed",
   "rating": "4.9",
@@ -83,7 +83,7 @@
     {
       "name": "Signature Precision Haircut & Blowout",
       "badge": "Popular",
-      "price_from": "£65",
+      "price_from": "\u00a365",
       "duration": "60 Mins",
       "description": "Bespoke consultation, revitalizing shampoo, tailored dry or wet cut, followed by our signature bouncy voluminous blowout.",
       "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80",
@@ -97,7 +97,7 @@
     {
       "name": "Artisan Balayage & Color Gloss",
       "badge": "Signature",
-      "price_from": "£160",
+      "price_from": "\u00a3160",
       "duration": "180 Mins",
       "description": "Hand-painted dimensional lightening tailored to your natural movement, sealed with a customized acidic toner and gloss.",
       "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80",
@@ -111,7 +111,7 @@
     {
       "name": "Hydra-Infusion Glow Facial",
       "badge": "Best Seller",
-      "price_from": "£95",
+      "price_from": "\u00a395",
       "duration": "75 Mins",
       "description": "Multi-step medical-grade hydra-dermabrasion, ultrasonic pore extraction, botanical peel, and collagen LED rejuvenation.",
       "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80",
@@ -125,7 +125,7 @@
     {
       "name": "Luxury BIAB Structured Gel Manicure",
       "badge": "Trending",
-      "price_from": "£55",
+      "price_from": "\u00a355",
       "duration": "60 Mins",
       "description": "Russian dry manicure cuticle prep, strengthening Builder in a Bottle (BIAB) apex overlay, and high-shine gel polish.",
       "image": "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80",
@@ -139,7 +139,7 @@
     {
       "name": "Aromatherapy Deep Relax Spa Massage",
       "badge": "Wellness",
-      "price_from": "£85",
+      "price_from": "\u00a385",
       "duration": "60 Mins",
       "description": "Full-body customized tension release using warm organic essential oils, hot stone pressure points, and soothing strokes.",
       "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80",
@@ -153,7 +153,7 @@
     {
       "name": "Couture Bridal & Glamour Package",
       "badge": "VIP Special",
-      "price_from": "£220",
+      "price_from": "\u00a3220",
       "duration": "150 Mins",
       "description": "Comprehensive wedding or gala makeover including luxury hair styling, 24hr HD airbrush makeup, and lash application.",
       "image": "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80",
