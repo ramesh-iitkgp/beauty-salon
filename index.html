@@ -26,14 +26,14 @@
       theme: {
         extend: {
           colors: {
-            background: '#FAF6F0',
-            foreground: '#4A3427',
-            primary: '#986A3E',
-            'primary-dark': '#784F27',
-            secondary: '#F3EADF',
-            muted: '#8C7B70',
-            border: '#E8DCCF',
-            darkcard: '#1B120D'
+            background: '#FAF5EE',
+            foreground: '#2E1E17',
+            primary: '#C86D51',
+            'primary-dark': '#A34F35',
+            secondary: '#F6ECE6',
+            muted: '#6E5D53',
+            border: '#EAD9CF',
+            darkcard: '#201410'
           },
           fontFamily: {
             serif: ['Newsreader', 'serif'],
@@ -69,8 +69,8 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #FAF6F0;
-      color: #4A3427;
+      background-color: #FAF5EE;
+      color: #2E1E17;
       scroll-behavior: smooth;
     }
     h1, h2, h3, h4, h5, h6, .font-newsreader {
@@ -101,11 +101,11 @@
 <body class="antialiased selection:bg-primary selection:text-white">
 
   <!-- Navigation Header -->
-  <nav class="fixed top-0 inset-x-0 w-full z-50 bg-[#FAF6F0]/95 backdrop-blur-md border-b border-[#E8DCCF]/80">
+  <nav class="fixed top-0 inset-x-0 w-full z-50 bg-[#FAF5EE]/95 backdrop-blur-md border-b border-[#EAD9CF]/80">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-6">
       
       <!-- Brand Logo / Business Name (Isolated & Prominent, Truncated on Mobile to prevent overflow) -->
-      <a href="#" class="flex items-center gap-2 bg-white/80 border border-[#E8DCCF] px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm hover:border-primary transition-all min-w-0 max-w-[62vw] sm:max-w-[360px] md:max-w-none shrink">
+      <a href="#" class="flex items-center gap-2 bg-white/90 border border-[#EAD9CF] px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm hover:border-primary transition-all min-w-0 max-w-[62vw] sm:max-w-[360px] md:max-w-none shrink">
         <span class="flex items-center justify-center bg-primary text-white rounded-full size-6 sm:size-7 shadow-sm shrink-0">
           <i data-lucide="sparkles" class="size-3.5 sm:size-4"></i>
         </span>
@@ -135,7 +135,7 @@
 
       <!-- Action & Phone (Right) -->
       <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
-        <a href="tel:" data-phone class="flex items-center justify-center size-8 sm:size-auto sm:px-3 sm:py-1.5 rounded-full bg-white/90 border border-[#E8DCCF] text-primary shadow-sm hover:border-primary transition-all shrink-0" aria-label="Call business" title="Call Us">
+        <a href="tel:" data-phone class="flex items-center justify-center size-8 sm:size-auto sm:px-3 sm:py-1.5 rounded-full bg-white/90 border border-[#EAD9CF] text-primary shadow-sm hover:border-primary transition-all shrink-0" aria-label="Call business" title="Call Us">
           <i data-lucide="phone" class="size-3.5 sm:size-4 text-primary"></i>
           <span data-phone-display class="hidden md:inline ml-1.5 text-xs text-foreground/80 font-sans font-medium">+44 20 7946 0888</span>
         </a>
@@ -149,29 +149,29 @@
     </div>
 
     <!-- Section Switcher Tabs Bar (Option A: Tabbed App Interface) -->
-    <div class="border-t border-[#E8DCCF]/60 bg-[#FAF6F0]/98 py-2 px-3 sm:px-6 overflow-x-auto custom-scrollbar">
+    <div class="border-t border-[#EAD9CF]/60 bg-[#FAF5EE]/98 py-2 px-3 sm:px-6 overflow-x-auto custom-scrollbar">
       <div class="max-w-7xl mx-auto flex items-center gap-2 sm:gap-3 min-w-max">
         <a href="#overview" class="section-tab active inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-sans transition-all bg-primary text-white shadow-sm" data-tab="overview">
           <i data-lucide="sparkles" class="size-3.5"></i>
           <span>Overview</span>
         </a>
-        <a href="#calculator" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="calculator">
+        <a href="#calculator" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#EAD9CF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="calculator">
           <i data-lucide="calculator" class="size-3.5"></i>
           <span>Price Estimator</span>
         </a>
-        <a href="#transformations" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="transformations">
+        <a href="#transformations" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#EAD9CF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="transformations">
           <i data-lucide="camera" class="size-3.5"></i>
           <span>Transformations</span>
         </a>
-        <a href="#services" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="services">
+        <a href="#services" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#EAD9CF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="services">
           <i data-lucide="scissors" class="size-3.5"></i>
           <span>Services</span>
         </a>
-        <a href="#reviews" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="reviews">
+        <a href="#reviews" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#EAD9CF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="reviews">
           <i data-lucide="star" class="size-3.5"></i>
           <span>Reviews</span>
         </a>
-        <a href="#faqs" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#E8DCCF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="faqs">
+        <a href="#faqs" class="section-tab inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium font-sans transition-all bg-white border border-[#EAD9CF] text-foreground/80 hover:border-primary hover:text-primary" data-tab="faqs">
           <i data-lucide="help-circle" class="size-3.5"></i>
           <span>FAQs</span>
         </a>
@@ -182,12 +182,12 @@
   <!-- Hero & Overview Section -->
   <section id="overview" class="pt-32 sm:pt-40 pb-12 sm:pb-16 px-3 sm:px-6 w-full max-w-full overflow-hidden">
     <div class="max-w-7xl mx-auto w-full">
-      <div class="relative rounded-[1.8rem] sm:rounded-[2.5rem] overflow-hidden bg-[#1B120D] min-h-[520px] sm:min-h-[640px] md:min-h-[700px] flex flex-col items-center justify-center px-4 sm:px-6 text-center text-white shadow-2xl shadow-primary/10 border border-white/10">
+      <div class="relative rounded-[1.8rem] sm:rounded-[2.5rem] overflow-hidden bg-[#201410] min-h-[520px] sm:min-h-[640px] md:min-h-[700px] flex flex-col items-center justify-center px-4 sm:px-6 text-center text-white shadow-2xl shadow-primary/15 border border-white/10">
         <!-- Background Hero Image -->
         <img id="hero-bg-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=75" fetchpriority="high" loading="eager" decoding="async" alt="Salon styling session" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity">
 
         <!-- Gradient Overlays -->
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.22),transparent_30%),radial-gradient(circle_at_80%_70%,rgba(152,106,62,0.5),transparent_35%),linear-gradient(to_bottom,rgba(0,0,0,0.25),rgba(0,0,0,0.75))] pointer-events-none"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.22),transparent_30%),radial-gradient(circle_at_80%_70%,rgba(200,109,81,0.45),transparent_35%),linear-gradient(to_bottom,rgba(0,0,0,0.25),rgba(0,0,0,0.75))] pointer-events-none"></div>
 
         <!-- Content -->
         <div class="relative z-10 max-w-3xl flex flex-col items-center pt-6 sm:pt-8 pb-10 sm:pb-16 w-full">
@@ -199,12 +199,12 @@
             <span class="hidden sm:inline">• Luxury Hair Sanctuary</span>
           </div>
 
-          <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-[5.2rem] leading-[1.08] mb-4 sm:mb-6 max-w-4xl tracking-tight font-newsreader font-light">
-            Experience Bespoke Hair Artistry, Radiant Color &amp; Rejuvenating Beauty Care
+          <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-[4.8rem] leading-[1.08] mb-4 sm:mb-6 max-w-4xl tracking-tight font-newsreader font-light">
+            Bespoke Hair &amp; Luxury Beauty Artistry at <span class="text-[#E8A590] italic font-normal" data-business-name>Luxe Glow Salon</span>
           </h1>
           
-          <p class="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl font-newsreader font-light leading-relaxed mb-6 sm:mb-8 px-2" data-tagline>
-            A premier luxury boutique salon in <span data-city>London</span>, crafting custom balayage blonding, precision hair styling, and restorative skincare facials tailored to you.
+          <p class="text-sm sm:text-base md:text-lg text-white/85 max-w-2xl font-newsreader font-light leading-relaxed mb-6 sm:mb-8 px-2" data-tagline>
+            Indulge in couture balayage blonding, restorative skincare, and 1-on-1 personalized styling with <strong class="text-white font-medium" data-business-name>Luxe Glow Salon</strong> in <span data-city>London</span>.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center w-full max-w-md sm:max-w-none">

@@ -7,28 +7,28 @@
   --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Playfair Display', Georgia, serif;
 
-  /* Color Palette */
-  --color-primary: #C59B6D;       /* Warm Champagne Gold */
-  --color-primary-light: #E8D3B9; /* Soft Champagne Glow */
-  --color-primary-dark: #9E7444;  /* Deep Antique Gold */
+  /* Color Palette - Option A: Warm Terracotta & Rose Silk */
+  --color-primary: #C86D51;       /* Terracotta Accent */
+  --color-primary-light: #F6ECE6; /* Warm Petal Silk */
+  --color-primary-dark: #A34F35;  /* Burnt Sienna */
   
-  --color-accent: #E29578;        /* Warm Rose Blush */
-  --color-accent-light: #FDF0ED;  /* Soft Petal Pink */
+  --color-accent: #C86D51;        /* Terracotta */
+  --color-accent-light: #FBF5F0;  /* Soft Warm Linen */
   
-  --color-dark: #1A1817;          /* Sleek Charcoal Black */
-  --color-dark-surface: #242220;  /* Card Surface Dark */
-  --color-dark-border: #383431;   /* Border Line */
+  --color-dark: #201410;          /* Deep Espresso */
+  --color-dark-surface: #2B1C17;  /* Card Surface Dark */
+  --color-dark-border: #3D2B24;   /* Border Line */
   
-  --color-light: #FAF8F5;         /* Cream Silk Background */
+  --color-light: #FAF5EE;         /* Warm Alabaster Canvas */
   --color-light-card: #FFFFFF;    /* Pure White Card */
-  --color-text-dark: #1E1B18;
-  --color-text-muted: #6E6862;
-  --color-text-light: #F4F1EA;
+  --color-text-dark: #2E1E17;     /* Deep Espresso Text */
+  --color-text-muted: #6E5D53;    /* Muted Warm Charcoal */
+  --color-text-light: #FAF5EE;
 
-  --shadow-sm: 0 2px 8px rgba(26, 24, 23, 0.06);
-  --shadow-md: 0 10px 30px rgba(26, 24, 23, 0.08);
-  --shadow-lg: 0 20px 50px rgba(26, 24, 23, 0.12);
-  --shadow-gold: 0 12px 35px rgba(197, 155, 109, 0.25);
+  --shadow-sm: 0 2px 8px rgba(46, 30, 23, 0.05);
+  --shadow-md: 0 10px 30px rgba(46, 30, 23, 0.08);
+  --shadow-lg: 0 20px 50px rgba(46, 30, 23, 0.12);
+  --shadow-gold: 0 12px 35px rgba(200, 109, 81, 0.25);
 
   --radius-sm: 8px;
   --radius-md: 16px;

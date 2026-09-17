@@ -71,12 +71,24 @@ async function loadSalonData() {
     const res = await fetch("./data/business.json");
     if (!res.ok) throw new Error("Could not load data/business.json");
     salonData = await res.json();
-    currentCurrency = salonData.currency_symbol || "£";
-    applyDataToDOM(salonData);
   } catch (err) {
     console.warn("Using fallback salon state:", err);
-    updateCalculatorDisplay();
+    salonData = {};
   }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("name") || urlParams.get("business_name")) {
+    salonData.business_name = urlParams.get("name") || urlParams.get("business_name");
+  }
+  if (urlParams.get("city")) {
+    salonData.city = urlParams.get("city");
+  }
+  if (urlParams.get("phone")) {
+    salonData.phone = urlParams.get("phone");
+  }
+
+  currentCurrency = salonData.currency_symbol || "£";
+  applyDataToDOM(salonData);
 }
 
 function cleanBusinessName(raw, city) {
@@ -121,12 +133,15 @@ function applyDataToDOM(data) {
   if (!data) return;
 
   // Text contents
-  const bName = cleanBusinessName(data.business_name || "Luxe Glow Salon", data.city);
+  const city = data.city || "London";
+  const bName = cleanBusinessName(data.business_name || "Luxe Glow Salon", city);
   document.title = `${bName} | Luxury Hair, Color & Beauty Lounge`;
   document.querySelectorAll("[data-business-name]").forEach(el => el.textContent = bName);
-  document.querySelectorAll("[data-tagline]").forEach(el => el.textContent = data.tagline || "");
+  document.querySelectorAll("[data-tagline]").forEach(el => {
+    el.innerHTML = `Indulge in couture balayage blonding, restorative skincare, and 1-on-1 personalized styling with <strong class="text-white font-medium">${bName}</strong> in <span>${city}</span>.`;
+  });
   document.querySelectorAll("[data-address]").forEach(el => el.textContent = data.address || "");
-  document.querySelectorAll("[data-city]").forEach(el => el.textContent = data.city || "London");
+  document.querySelectorAll("[data-city]").forEach(el => el.textContent = city);
   document.querySelectorAll("[data-hours]").forEach(el => el.textContent = data.opening_hours || "");
   
   if (data.phone) {
